@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-6">
+
+  <!-- Heading on top -->
+  <h1 class="text-5xl font-bold text-blue-600">Your Tarot Card</h1>
+
+  <!-- Card and meaning side-by-side -->
+  <div data-controller="card" class="flex gap-6">
+
+    <!-- Left: tarot card -->
+    <div>
+      <%= image_tag "tarot/#{@card}", 
+            class: "w-64 cursor-pointer", 
+            data: { action: "click->card#showInfo" } %>
+    </div>
+
+    <!-- Right: hidden text that appears after tapping -->
+    <div data-card-target="info" class="hidden max-w-md">
+      <h2 class="text-xl font-bold mb-2">Card Meaning</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse potenti. Curabitur aliquam sapien sed nisl porta...
+      </p>
+    </div>
+
+  </div>
+</div>
