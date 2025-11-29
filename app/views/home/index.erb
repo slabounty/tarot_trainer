@@ -8,19 +8,33 @@
 
     <!-- Left: tarot card -->
     <div>
-      <%= image_tag "tarot/#{@card}", 
-            class: "w-64 cursor-pointer", 
+      <%= image_tag "tarot/#{@card}",
+            class: "w-64 cursor-pointer",
             data: { action: "click->card#showInfo" } %>
     </div>
 
     <!-- Right: hidden text that appears after tapping -->
-    <div data-card-target="info" class="hidden max-w-md">
-      <h2 class="text-xl font-bold mb-2">Card Meaning</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Suspendisse potenti. Curabitur aliquam sapien sed nisl porta...
-      </p>
-    </div>
+    <div data-card-target="info" class="hidden max-w-md flex flex-col space-y-20">
 
+      <div>
+        <h2 class="text-xl font-bold mb-1">Name</h2>
+        <p class="text-gray-700"><%= @card_info["name"] %></p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-1">Meaning</h2>
+        <p class="text-gray-700"><%= @card_info["meaning"] %></p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-1">Arcana</h2>
+        <p class="text-gray-700"><%= @card_info["arcana"] %></p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-1">Element</h2>
+        <p class="text-gray-700"><%= @card_info["element"] %></p>
+      </div>
+    </div>
   </div>
 </div>
