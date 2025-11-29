@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @cards = Dir.glob(Rails.root.join("app/assets/images/tarot/*"))
-                .map { |path| File.basename(path) }
-
-    @card = @cards.sample
+    @card = CARD_TEXT.keys.sample
+    @card_info = CARD_TEXT[@card]
   end
 end
