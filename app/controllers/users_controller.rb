@@ -8,11 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      puts "Saving user #{@user}"
       session[:user_id] = @user.id
       redirect_to tarot_index_path, notice: "Signed up successfully!"
     else
-      puts "Could not save user #{@user}"
       render :new
     end
   end
