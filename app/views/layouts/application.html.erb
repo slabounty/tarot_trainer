@@ -18,15 +18,57 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <nav class="bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center shadow-sm">
+      <div class="text-2xl font-bold text-gray-800">
+        Tarot Trainer
+      </div>
+
+      <div class="space-x-4">
+        <% if logged_in? %>
+          <%= button_to "Logout", logout_path, method: :delete, class: "text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+        <% else %>
+          <%= link_to 'Sign Up', signup_path, class: 'text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5' %>
+          <%= link_to 'Login', login_path, class: 'text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5' %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% if notice %>
+      <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
+        <p class="font-bold">Notice</p>
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
+        <p class="font-bold">Alert</p>
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+
+    <main>
       <%= yield %>
     </main>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12 py-6 px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div class="mb-2 md:mb-0">
+          © <%= Time.current.year %> Tarot Trainer. All rights reserved.
+        </div>
+        <div class="space-x-4">
+          <%= link_to 'FAQ', root_path, class: 'hover:underline' %>
+          <%= link_to 'Contact', root_path, class: 'hover:underline' %>
+          <%= link_to 'Privacy Policy', root_path, class: 'hover:underline' %>
+          <%= link_to 'Terms of Service', root_path, class: 'hover:underline' %>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
+
