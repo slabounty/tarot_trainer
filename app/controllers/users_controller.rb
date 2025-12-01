@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tarot_index_path, notice: "Signed up successfully!"
     else
-      render :new
+      render :new, status: :unprocessable_content
     end
   end
 
