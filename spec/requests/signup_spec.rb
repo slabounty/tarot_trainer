@@ -20,7 +20,6 @@ RSpec.describe "User Signup", type: :request do
 
     user = User.find_by(email: email)
     expect(user).not_to be_nil
-    #expect(user.sessions.count).to eq(1)
   end
 
   describe "POST /signup" do
@@ -57,4 +56,3 @@ RSpec.describe "User Signup", type: :request do
     end
   end
 end
-

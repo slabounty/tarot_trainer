@@ -11,4 +11,3 @@ RSpec.describe "Splash Page", type: :request do
     end
   end
 end
-
