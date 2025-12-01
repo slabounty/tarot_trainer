@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   get "splash/index"
   get "sessions/new"
-  get "users/new"
+  #get "users/new"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "splash#index"
 
   get "signup", to: "users#new"
   post "signup", to: "users#create"
+
+  resources :users, only: [ :new, :create, :show ]
+  get "user_home", to: "users#show"
 
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
