@@ -10,14 +10,12 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_home_path, notice: "Signed up successfully!"
-      #redirect_to tarot_index_path, notice: "Signed up successfully!"
     else
       render :new, status: :unprocessable_content
     end
   end
 
   def show
-    #puts "user id = #{session[:user_id]}"
     @user = User.find(session[:user_id])
   end
 
