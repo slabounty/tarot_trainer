@@ -1,5 +1,5 @@
 class SplashController < ApplicationController
   def index
-    @card = CARD_TEXT.keys.sample
+    @card = TarotCard.all.sample
   end
 end
