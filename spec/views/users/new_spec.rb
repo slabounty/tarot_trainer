@@ -36,4 +36,3 @@ RSpec.describe "users/new.html.erb" do
     expect(rendered).to have_button("Sign Up")
   end
 end
-
