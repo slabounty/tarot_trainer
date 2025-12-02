@@ -3,7 +3,7 @@
 
   <!-- Example card (can be an image or emoji) -->
   <div>
-    <%= image_tag "tarot/#{@card}",
+    <%= image_tag "tarot/#{@card.image_file}",
           class: "w-64 cursor-pointer",
           data: { action: "click->card#showInfo" } %>
   </div>
