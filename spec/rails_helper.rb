@@ -66,4 +66,9 @@ RSpec.configure do |config|
   RSpec.configure do |config|
     config.include AuthHelpers, type: :request
   end
+
+
+  RSpec.configure do |config|
+    config.include FactoryBot::Syntax::Methods
+  end
 end

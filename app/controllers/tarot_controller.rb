@@ -6,7 +6,12 @@ class TarotController < ApplicationController
   end
 
   def card_of_the_day
-    puts "current user = #{current_user.inspect}"
-    @card = TarotCard.random_card
+    today = Date.current
+
+    @card_of_day = current_user.card_of_the_days.find_or_create_by(date_shown: today) do |entry|
+      entry.tarot_card = TarotCard.random_card
+    end
+
+    @card = @card_of_day.tarot_card
   end
 end
