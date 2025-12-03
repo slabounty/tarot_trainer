@@ -6,12 +6,14 @@ RSpec.describe TarotCard, type: :model do
   let(:meaning) { "some tarot card meaning" }
   let(:arcana) { "some tarot card arcana" }
   let(:element) { "some tarot card element" }
+  let(:question) { "some tarot card question" }
   let(:tarot_card) { described_class.create(
     image_file: image_file,
     name: name,
     meaning: meaning,
     arcana: arcana,
-    element: element,) }
+    element: element,
+    card_of_the_day_question: question) }
 
   describe "number of cards" do
     it "has 78 cards" do
@@ -46,6 +48,12 @@ RSpec.describe TarotCard, type: :model do
   describe "#element" do
     it "has the correct image file name" do
       expect(tarot_card.element).to eq(element)
+    end
+  end
+
+  describe "#card_of_the_day_question" do
+    it "has the correct image file name" do
+      expect(tarot_card.card_of_the_day_question).to eq(question)
     end
   end
 end

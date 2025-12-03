@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_01_235216) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_03_002322) do
   create_table "tarot_cards", force: :cascade do |t|
-    t.string "image_file"
-    t.string "name"
-    t.string "meaning"
     t.string "arcana"
-    t.string "element"
+    t.string "card_of_the_day_question"
     t.datetime "created_at", null: false
+    t.string "element"
+    t.string "image_file"
+    t.string "meaning"
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "email"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
+    t.datetime "updated_at", null: false
   end
 end
