@@ -570,3 +570,328 @@ tarot_cards.each do |tarot_card|
     element: tarot_card[:element]
   )
 end
+
+question_tarot_cards = [
+  {
+    name: "The Fool",
+    question: "What new beginning or sense of freedom is ready to enter your life today?"
+  },
+  {
+    name: "The Magician",
+    question: "Where can you channel your creativity and take inspired action right now?"
+  },
+  {
+    name: "The High Priestess",
+    question: "What intuition or inner knowing is asking for your attention?"
+  },
+  {
+    name: "The Empress",
+    question: "How can you open yourself to receive more love or creative energy today?"
+  },
+  {
+    name: "The Emperor",
+    question: "Where are you being called to step into your personal power?"
+  },
+  {
+    name: "The Hierophant",
+    question: "What traditions or teachings are guiding you at this moment?"
+  },
+  {
+    name: "The Lovers",
+    question: "How can you bring more alignment or harmony into your relationships?"
+  },
+  {
+    name: "The Chariot",
+    question: "What momentum is building in your life, and how can you support it?"
+  },
+  {
+    name: "Strength",
+    question: "Which obstacles are you ready to overcome through endurance and focus?"
+  },
+  {
+    name: "The Hermit",
+    question: "Where could solitude help you access deeper wisdom?"
+  },
+  {
+    name: "WheelOfFortune",
+    question: "What changes or cycles are unfolding that you can embrace rather than resist?"
+  },
+  {
+    name: "Justice",
+    question: "Where do you need to restore truth or balance in your life?"
+  },
+  {
+    name: "The Hanged Man",
+    question: "What new perspective could shift your understanding of a situation?"
+  },
+  {
+    name: "Death",
+    question: "What is ready to be released so transformation can take place?"
+  },
+  {
+    name: "Temperance",
+    question: "Where is moderation or patience being requested of you?"
+  },
+  {
+    name: "The Devil",
+    question: "What habits or attachments might be holding you back?"
+  },
+  {
+    name: "The Tower",
+    question: "What sudden change is reshaping things for the better?"
+  },
+  {
+    name: "The Star",
+    question: "Where are hope and healing trying to take root in your life?"
+  },
+  {
+    name: "The Moon",
+    question: "What illusions or dreams need clarity today?"
+  },
+  {
+    name: "The Sun",
+    question: "What clarity or renewed optimism is coming into focus?"
+  },
+  {
+    name: "Judgement",
+    question: "Where are you awakening to a deeper truth or acceptance?"
+  },
+  {
+    name: "The World",
+    question: "What success or completion can you acknowledge and celebrate?"
+  },
+  {
+    name: "Ace of Cups",
+    question: "How can you invite new love or emotional openness today?"
+  },
+  {
+    name: "II of Cups",
+    question: "Where is partnership or collaboration bringing strength?"
+  },
+  {
+    name: "III of Cups",
+    question: "What deserves celebration or gratitude in your life?"
+  },
+  {
+    name: "IV of Cups",
+    question: "Where might apathy or stagnation be blocking your growth?"
+  },
+  {
+    name: "V of Cups",
+    question: "What grief or sadness needs gentle acknowledgment?"
+  },
+  {
+    name: "VI of Cups",
+    question: "Which memories or past experiences bring harmony?"
+  },
+  {
+    name: "VII of Cups",
+    question: "What possibilities or daydreams are calling to you?"
+  },
+  {
+    name: "VIII of Cups",
+    question: "What are you ready to walk away from for your wellbeing?"
+  },
+  {
+    name: "IX of Cups",
+    question: "Where can you recognize satisfaction or abundance right now?"
+  },
+  {
+    name: "X of Cups",
+    question: "What brings you happiness and emotional fulfillment today?"
+  },
+  {
+    name: "Page of Cups",
+    question: "What playful or loving message is trying to reach you?"
+  },
+  {
+    name: "Knight of Cups",
+    question: "Where are emotions moving quickly or asking for expression?"
+  },
+  {
+    name: "Queen of Cups",
+    question: "How can you nurture your feminine energy or intuition today?"
+  },
+  {
+    name: "King of Cups",
+    question: "What emotional stability or empathy can you offer yourself?"
+  },
+  {
+    name: "Ace of Pentacles",
+    question: "What new beginning is leading toward abundance?"
+  },
+  {
+    name: "II of Pentacles",
+    question: "Where can you cultivate balance and stability?"
+  },
+  {
+    name: "III of Pentacles",
+    question: "What new doors or opportunities are opening for you?"
+  },
+  {
+    name: "IV of Pentacles",
+    question: "How can you conserve resources and build long-term stability?"
+  },
+  {
+    name: "V of Pentacles",
+    question: "Where are you feeling depleted, and what support do you need?"
+  },
+  {
+    name: "VI of Pentacles",
+    question: "Where can you practice generosity or share your resources?"
+  },
+  {
+    name: "VII of Pentacles",
+    question: "What area of life is inviting patience and steady growth?"
+  },
+  {
+    name: "VIII of Pentacles",
+    question: "Where will hard work now lead to productivity later?"
+  },
+  {
+    name: "IX of Pentacles",
+    question: "What success or enjoyment can you embrace today?"
+  },
+  {
+    name: "X of Pentacles",
+    question: "How does family or legacy influence your choices today?"
+  },
+  {
+    name: "Page of Pentacles",
+    question: "Where are solid beginnings forming in your material world?"
+  },
+  {
+    name: "Knight of Pentacles",
+    question: "What steady progress are you making toward long-term abundance?"
+  },
+  {
+    name: "Queen of Pentacles",
+    question: "Where can dependability or generosity shape your actions?"
+  },
+  {
+    name: "King of Pentacles",
+    question: "Where is wealth, generosity, or stability present in your life?"
+  },
+  {
+    name: "Ace of Swords",
+    question: "What new idea or moment of clarity is emerging?"
+  },
+  {
+    name: "II of Swords",
+    question: "What indecision requires openness instead of self-protection?"
+  },
+  {
+    name: "III of Swords",
+    question: "What pain needs acknowledgment before healing can begin?"
+  },
+  {
+    name: "IV of Swords",
+    question: "Where do you need rest or introspection?"
+  },
+  {
+    name: "V of Swords",
+    question: "How can you navigate conflict with clarity and patience?"
+  },
+  {
+    name: "VI of Swords",
+    question: "What healing journey or transition are you ready to begin?"
+  },
+  {
+    name: "VII of Swords",
+    question: "Where is strategy or careful planning necessary?"
+  },
+  {
+    name: "VIII of Swords",
+    question: "What restriction or trapped feeling can you release?"
+  },
+  {
+    name: "IX of Swords",
+    question: "What anxiety can you soothe with truth and presence?"
+  },
+  {
+    name: "X of Swords",
+    question: "What ending is making space for a new beginning?"
+  },
+  {
+    name: "Page of Swords",
+    question: "Where can you channel enthusiasm and curiosity?"
+  },
+  {
+    name: "Knight of Swords",
+    question: "What truth needs to be spoken with clarity and assertiveness?"
+  },
+  {
+    name: "Queen of Swords",
+    question: "What decisive action can bring honesty into a situation?"
+  },
+  {
+    name: "King of Swords",
+    question: "Where is intellectual leadership being asked of you?"
+  },
+  {
+    name: "Ace of Wands",
+    question: "What inspiration or creativity wants expression today?"
+  },
+  {
+    name: "II of Wands",
+    question: "What future plans require vision and choice?"
+  },
+  {
+    name: "III of Wands",
+    question: "Where is expansion or personal growth unfolding?"
+  },
+  {
+    name: "IV of Wands",
+    question: "What special moment deserves celebration?"
+  },
+  {
+    name: "V of Wands",
+    question: "What competition or challenge is sharpening your skills?"
+  },
+  {
+    name: "VI of Wands",
+    question: "Where are you being recognized for your efforts?"
+  },
+  {
+    name: "VII of Wands",
+    question: "Where is assertiveness or boundary-keeping needed?"
+  },
+  {
+    name: "VIII of Wands",
+    question: "Where is quick action required to move things forward?"
+  },
+  {
+    name: "IX of Wands",
+    question: "What requires persistence or self-reliance right now?"
+  },
+  {
+    name: "X of Wands",
+    question: "What burden can you set down to lighten your path?"
+  },
+  {
+    name: "Page of Wands",
+    question: "Where is adventure calling you to be bold?"
+  },
+  {
+    name: "Knight of Wands",
+    question: "What passion or fast-moving energy is pushing you forward?"
+  },
+  {
+    name: "Queen of Wands",
+    question: "How can you express creativity or ambition today?"
+  },
+  {
+    name: "King of Wands",
+    question: "Where are you being called into your power or authority?"
+  }
+]
+
+question_tarot_cards.each do |tarot_card|
+  card = TarotCard.find_by!(
+    name: tarot_card[:name],
+  )
+  if card.card_of_the_day_question == nil
+    card.card_of_the_day_question = tarot_card[:question]
+    card.save!
+  end
+end

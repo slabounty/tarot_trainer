@@ -10,23 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_01_235216) do
-  create_table "tarot_cards", force: :cascade do |t|
-    t.string "image_file"
-    t.string "name"
-    t.string "meaning"
-    t.string "arcana"
-    t.string "element"
+ActiveRecord::Schema[8.1].define(version: 2025_12_03_182902) do
+  create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.date "date_shown"
+    t.integer "tarot_card_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["tarot_card_id"], name: "index_card_of_the_days_on_tarot_card_id"
+    t.index ["user_id"], name: "index_card_of_the_days_on_user_id"
+  end
+
+  create_table "tarot_cards", force: :cascade do |t|
+    t.string "arcana"
+    t.string "card_of_the_day_question"
+    t.datetime "created_at", null: false
+    t.string "element"
+    t.string "image_file"
+    t.string "meaning"
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "email"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
+    t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "card_of_the_days", "tarot_cards"
+  add_foreign_key "card_of_the_days", "users"
 end

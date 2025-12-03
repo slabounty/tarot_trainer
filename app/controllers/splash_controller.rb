@@ -1,5 +1,5 @@
 class SplashController < ApplicationController
   def index
-    @card = TarotCard.all.sample
+    @card = TarotCard.random_card
   end
 end
