@@ -14,8 +14,8 @@ RSpec.describe "User Login", type: :request do
       expect(response).to redirect_to(user_home_path)
 
       follow_redirect!
-      expect(response.body).to match(/<a[^>]*href="#{tarot_index_path}"[^>]*>Train<\/a>/)
-      expect(response.body).to include("Tarot Trainer")
+      expect(response.body).to match(/<a[^>]*href="#{tarot_index_path}"[^>]*>Explore<\/a>/)
+      expect(response.body).to include("Tarot Explorer")
     end
   end
 
