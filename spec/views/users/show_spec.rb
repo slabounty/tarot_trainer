@@ -11,8 +11,8 @@ RSpec.describe "users/show.html.erb" do
     expect(rendered).to match(/Chris/)
   end
 
-  it "has the Train link" do
+  it "has the Explore link" do
     render
-    expect(rendered).to have_link("Train")
+    expect(rendered).to have_link("Explore")
   end
 end
