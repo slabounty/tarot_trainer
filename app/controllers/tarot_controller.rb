@@ -14,4 +14,29 @@ class TarotController < ApplicationController
 
     @card = @card_of_day.tarot_card
   end
+
+def read_a_spread
+  @spread = Spread.order("RANDOM()").first
+
+  # Pick a random question for the spread
+  spread_prompt = @spread.spread_prompts.order("RANDOM()").first
+  @prompt = spread_prompt.prompt
+
+  # Create the reading
+  reading = current_user.readings.create!(spread: @spread, spread_prompt: spread_prompt)
+
+  # Pick the right number of cards
+  @cards = TarotCard.random_cards(@spread.spread_positions.count)
+
+  # Fetch ordered positions
+  @positions = @spread.spread_positions.order(:position)
+
+  # Create the join rows
+  @positions.each_with_index do |pos, i|
+    reading.reading_cards.create!(
+      tarot_card: @cards[i],
+      spread_position: pos
+    )
+  end
+end
 end

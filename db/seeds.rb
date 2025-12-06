@@ -895,3 +895,195 @@ question_tarot_cards.each do |tarot_card|
     card.save!
   end
 end
+
+
+################## Add spreads here
+# ---- Past / Present / Future -----------------------------
+
+ppf = Spread.find_or_create_by!(name: "Past / Present / Future")
+ppf.update!(
+  description: "A classic 3-card spread showing past influences, present circumstances, and future possibilities."
+)
+
+[
+  ["Past",     1],
+  ["Present",  2],
+  ["Future",   3]
+].each do |(position_name, pos)|
+  position = ppf.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{ppf.name}"
+
+
+# ---- You / Them / Relationship -----------------------------
+
+ytr = Spread.find_or_create_by!(name: "You / Them / Relationship")
+ytr.update!(
+  description: "A 3-card relational spread showing your energy, their energy, and the connection between you."
+)
+
+[
+  ["You",          1],
+  ["Them",         2],
+  ["Relationship", 3]
+].each do |(position_name, pos)|
+  position = ytr.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{ytr.name}"
+
+
+# ---- Situation / Obstacle / Solution -----------------------------
+
+sos = Spread.find_or_create_by!(name: "Situation / Obstacle / Solution")
+sos.update!(
+  description: "A 3-card spread that highlights where things currently stand, what blocks you, and the best way forward."
+)
+
+[
+  ["Situation", 1],
+  ["Obstacle",  2],
+  ["Solution",  3]
+].each do |(position_name, pos)|
+  position = sos.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{sos.name}"
+
+
+# ---- Mind / Body / Spirit -----------------------------
+
+mbs = Spread.find_or_create_by!(name: "Mind / Body / Spirit")
+mbs.update!(
+  description: "A holistic 3-card spread examining mental, physical, and spiritual influences."
+)
+
+[
+  ["Mind",   1],
+  ["Body",   2],
+  ["Spirit", 3]
+].each do |(position_name, pos)|
+  position = mbs.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{mbs.name}"
+
+
+# ---- Path 1 / Path 2 / Path 3 -----------------------------
+
+p123 = Spread.find_or_create_by!(name: "Path 1 / Path 2 / Path 3")
+p123.update!(
+  description: "A 3-card spread showing different paths or options available to you."
+)
+
+[
+  ["Path 1", 1],
+  ["Path 2", 2],
+  ["Path 3", 3]
+].each do |(position_name, pos)|
+  position = p123.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{p123.name}"
+
+
+# ---- Accept / Embrace / Let Go -----------------------------
+
+aelg = Spread.find_or_create_by!(name: "Accept / Embrace / Let Go")
+aelg.update!(
+  description: "A reflective spread for understanding what to accept, what to embrace, and what to release."
+)
+
+[
+  ["Accept",    1],
+  ["Embrace",   2],
+  ["Let Go",    3]
+].each do |(position_name, pos)|
+  position = aelg.spread_positions.find_or_initialize_by(position: pos)
+  position.update!(name: position_name)
+end
+
+puts "Seeded spread: #{aelg.name}"
+
+def add_prompts(spread_name, prompts)
+  spread = Spread.find_by!(name: spread_name)
+
+  prompts.each do |p|
+    SpreadPrompt.find_or_create_by!(spread: spread, prompt: p)
+  end
+
+  puts "Added #{prompts.count} prompts to #{spread.name}"
+end
+
+# ---------------------
+# Past / Present / Future
+# ---------------------
+add_prompts("Past / Present / Future", [
+  "What past influence is shaping my current situation?",
+  "What should I understand about my present circumstances?",
+  "What future direction am I currently headed toward?",
+  "What lesson from the past do I still need to integrate?",
+  "How can I best navigate my present to influence my future?"
+])
+
+# ---------------------
+# You / Them / Relationship
+# ---------------------
+add_prompts("You / Them / Relationship", [
+  "What energy am I bringing to this connection?",
+  "What is the other person’s true emotional state?",
+  "What is the current dynamic between us?",
+  "What do I need to understand about their perspective?",
+  "How can the relationship be improved?"
+])
+
+# ---------------------
+# Situation / Obstacle / Solution
+# ---------------------
+add_prompts("Situation / Obstacle / Solution", [
+  "What is the heart of my current situation?",
+  "What hidden obstacle is influencing things?",
+  "What is the best solution available to me?",
+  "How can I overcome the major challenge I'm facing?",
+  "What perspective will help me resolve this situation?"
+])
+
+# ---------------------
+# Mind / Body / Spirit
+# ---------------------
+add_prompts("Mind / Body / Spirit", [
+  "What is currently occupying my mind?",
+  "What does my body need most right now?",
+  "What message is my spirit trying to convey?",
+  "How can I bring my mind, body, and spirit into balance?",
+  "Where is the greatest energetic imbalance in my life?"
+])
+
+# ---------------------
+# Path 1 / Path 2 / Path 3
+# ---------------------
+add_prompts("Path 1 / Path 2 / Path 3", [
+  "What does the first path represent for me?",
+  "What potential lies in the second path?",
+  "What long-term outcome does the third path offer?",
+  "What guides me in choosing between these paths?",
+  "What am I not considering as I evaluate my options?"
+])
+
+# ---------------------
+# Accept / Embrace / Let Go
+# ---------------------
+add_prompts("Accept / Embrace / Let Go", [
+  "What do I need to accept about my current reality?",
+  "What should I embrace to move forward?",
+  "What is it time for me to release?",
+  "How can acceptance help me grow?",
+  "What am I holding onto that no longer serves me?"
+])
+
