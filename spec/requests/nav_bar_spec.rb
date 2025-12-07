@@ -27,7 +27,7 @@ RSpec.describe "Navbar visibility", type: :request do
 
         get root_path
 
-        expect(response.body).to include("Explore Day")
+        expect(response.body).to include("Explore the Tarot")
         expect(response.body).to include("Card of the Day")
         expect(response.body).to include("Read a Spread")
         expect(response.body).to include("Logout")
