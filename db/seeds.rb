@@ -906,9 +906,9 @@ ppf.update!(
 )
 
 [
-  ["Past",     1],
-  ["Present",  2],
-  ["Future",   3]
+  [ "Past",     1 ],
+  [ "Present",  2 ],
+  [ "Future",   3 ]
 ].each do |(position_name, pos)|
   position = ppf.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -925,9 +925,9 @@ ytr.update!(
 )
 
 [
-  ["You",          1],
-  ["Them",         2],
-  ["Relationship", 3]
+  [ "You",          1 ],
+  [ "Them",         2 ],
+  [ "Relationship", 3 ]
 ].each do |(position_name, pos)|
   position = ytr.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -944,9 +944,9 @@ sos.update!(
 )
 
 [
-  ["Situation", 1],
-  ["Obstacle",  2],
-  ["Solution",  3]
+  [ "Situation", 1 ],
+  [ "Obstacle",  2 ],
+  [ "Solution",  3 ]
 ].each do |(position_name, pos)|
   position = sos.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -963,9 +963,9 @@ mbs.update!(
 )
 
 [
-  ["Mind",   1],
-  ["Body",   2],
-  ["Spirit", 3]
+  [ "Mind",   1 ],
+  [ "Body",   2 ],
+  [ "Spirit", 3 ]
 ].each do |(position_name, pos)|
   position = mbs.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -982,9 +982,9 @@ p123.update!(
 )
 
 [
-  ["Path 1", 1],
-  ["Path 2", 2],
-  ["Path 3", 3]
+  [ "Path 1", 1 ],
+  [ "Path 2", 2 ],
+  [ "Path 3", 3 ]
 ].each do |(position_name, pos)|
   position = p123.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -1001,9 +1001,9 @@ aelg.update!(
 )
 
 [
-  ["Accept",    1],
-  ["Embrace",   2],
-  ["Let Go",    3]
+  [ "Accept",    1 ],
+  [ "Embrace",   2 ],
+  [ "Let Go",    3 ]
 ].each do |(position_name, pos)|
   position = aelg.spread_positions.find_or_initialize_by(position: pos)
   position.update!(name: position_name)
@@ -1086,4 +1086,3 @@ add_prompts("Accept / Embrace / Let Go", [
   "How can acceptance help me grow?",
   "What am I holding onto that no longer serves me?"
 ])
-
