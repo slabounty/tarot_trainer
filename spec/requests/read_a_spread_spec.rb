@@ -80,4 +80,3 @@ RSpec.describe "Read a Spread", type: :request do
     end
   end
 end
-

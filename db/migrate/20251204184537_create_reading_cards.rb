@@ -9,7 +9,7 @@ class CreateReadingCards < ActiveRecord::Migration[8.1]
     end
 
     add_index :reading_cards,
-              [:reading_id, :spread_position_id],
+              [ :reading_id, :spread_position_id ],
               unique: true
   end
 end
