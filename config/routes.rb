@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "tarot/card_of_the_day", to: "tarot#card_of_the_day"
   get "tarot/read_a_spread", to: "tarot#read_a_spread"
 
-  resources :readings, only: [:show, :update]
+  resources :readings, only: [ :show, :update ]
   patch "/readings/:id", to: "tarot#update_reading", as: :update_reading
 
 
