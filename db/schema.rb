@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_06_191843) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_07_235920) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_06_191843) do
     t.integer "spread_prompt_id", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.text "user_input"
     t.index ["spread_id"], name: "index_readings_on_spread_id"
     t.index ["spread_prompt_id"], name: "index_readings_on_spread_prompt_id"
     t.index ["user_id"], name: "index_readings_on_user_id"
