@@ -46,6 +46,8 @@ RSpec.describe "Read a Spread", type: :request do
       }.to change { Reading.count }.by(1)
         .and change { ReadingCard.count }.by(3) # 3 positions
 
+      follow_redirect!
+
       reading = Reading.last
 
       # Spread assigned correctly
