@@ -5,17 +5,20 @@ RSpec.describe "User Login", type: :request do
   let!(:user) { User.create!(email: email, password: "password", password_confirmation: "password") }
 
   describe "POST /login" do
-    it "logs in the user and redirects to user home" do
+    it "logs in the user and redirects to user dashboard" do
       post login_path, params: {
         email: "test@example.com",
         password: "password"
       }
 
-      expect(response).to redirect_to(user_home_path)
+      expect(response).to redirect_to(dashboard_path)
 
-      follow_redirect!
-      expect(response.body).to match(/<a[^>]*href="#{tarot_index_path}"[^>]*>Explore<\/a>/)
-      expect(response.body).to include("Tarot Explorer")
+      follow_redirect! # to user's dashboard
+
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include("Welcome back")
+      expect(response.body).to include("Quick Actions")
+      expect(response.body).to include("Card of the Day")
     end
   end
 

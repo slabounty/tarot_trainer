@@ -4,25 +4,30 @@ RSpec.describe "User Signup", type: :request do
   let(:email) { "newuser@example.com" }
   let(:password) { "password123" }
 
-  it "creates a new user and starts a session" do
-    post signup_path, params: {
-      user: {
-        email: email,
-        password: password,
-        password_confirmation: password
+  describe "POST /signup" do
+    it "creates a new user and starts a session" do
+      post signup_path, params: {
+        user: {
+          email: email,
+          password: password,
+          password_confirmation: password
+        }
       }
-    }
 
-    follow_redirect!
+      expect(response).to redirect_to(dashboard_path)
+      follow_redirect! # to user's dashboard
 
-    expect(response).to have_http_status(:ok)
-    expect(response.body).to include("Tarot Trainer")
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include("Welcome back")
+      expect(response.body).to include("Quick Actions")
+      expect(response.body).to include("Card of the Day")
 
-    user = User.find_by(email: email)
-    expect(user).not_to be_nil
+      user = User.find_by(email: email)
+      expect(user).not_to be_nil
+    end
   end
 
-  describe "POST /signup" do
+  describe "POST /signup with no email address" do
     it "does not create user without email address" do
       expect {
         post signup_path, params: {
@@ -38,7 +43,7 @@ RSpec.describe "User Signup", type: :request do
     end
   end
 
-  describe "POST /signup" do
+  describe "POST /signup with duplicat email address" do
     it "does not allow duplicate email addresses" do
       FactoryBot.create(:user, email: "duplicate@example.com")
 

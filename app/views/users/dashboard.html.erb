@@ -1,0 +1,91 @@
+<div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center space-y-6">
+  <h1 class="text-3xl font-bold text-gray-800">Welcome back, <%= @user.first_name %></h1>
+
+  <div class="bg-yellow-100 border border-yellow-300 p-4 rounded-xl mb-4 shadow text-center">
+    <h2 class="text-xl font-semibold text-yellow-800">🔥 Tarot Streak</h2>
+    <p class="text-3xl font-bold text-yellow-700"><%= @streak %> days</p>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="bg-white p-6 rounded-xl shadow mb-8">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Quick Actions</h2>
+
+    <div class="flex flex-wrap gap-4">
+      <%= link_to "Draw a Card",
+          tarot_card_of_the_day_path,
+          class: "text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+
+      <%= link_to "Start a New Reading",
+          tarot_read_a_spread_path,
+          class: "text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+
+      <%= link_to "Explore All Cards",
+          tarot_index_path,
+          class: "text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+    </div>
+  </div>
+
+  <!-- --- Card of the Day --- -->
+  <div class="flex flex-col items-center">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-2">Card of the Day</h2>
+
+    <% if @card_of_the_day %>
+      <%= image_tag "tarot/#{@card_of_the_day.tarot_card.image_file}",
+          class: "w-48 h-auto rounded shadow mb-4" %>
+
+      <p class="text-xl text-gray-700 font-medium">
+        <%= @card_of_the_day.tarot_card.name %>
+      </p>
+
+      <%= link_to "View Full Meaning",
+          tarot_card_of_the_day_path,
+          class: "mt-4 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+    <% else %>
+      <p class="text-gray-500 italic">No card for today.</p>
+    <% end %>
+  </div>
+
+  <div class="bg-white p-8 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Recent Readings</h2>
+
+    <% if @recent_readings.any? %>
+      <div class="space-y-6">
+
+        <% @recent_readings.each do |reading| %>
+          <div class="p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-xl font-semibold text-gray-800">
+                <%= reading.spread.name %>
+              </h3>
+
+              <span class="text-sm text-gray-500">
+                <%= reading.created_at.strftime("%b %d, %Y") %>
+              </span>
+            </div>
+
+            <!-- Thumbnails row -->
+            <div class="flex gap-4">
+              <% reading.reading_cards.includes(:tarot_card).each do |rc| %>
+                <%= image_tag "tarot/#{rc.tarot_card.image_file}",
+                    class: "w-20 h-auto rounded shadow" %>
+              <% end %>
+            </div>
+
+            <% if reading.spread_prompt&.prompt %>
+              <p class="text-gray-600 italic text-sm">
+                “<%= reading.spread_prompt.prompt %>”
+              </p>
+            <% end %>
+
+            <%= link_to "View Reading",
+                  reading_path(reading),
+                  class: "mt-3 inline-block text-blue-600 hover:underline" %>
+          </div>
+        <% end %>
+
+      </div>
+    <% else %>
+      <p class="text-gray-600 italic">No readings yet.</p>
+    <% end %>
+  </div>
+</div>

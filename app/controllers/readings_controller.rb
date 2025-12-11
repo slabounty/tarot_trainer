@@ -10,8 +10,6 @@ class ReadingsController < ApplicationController
   end
 
   def update
-    puts "\n\n\nUpdated reading with user input!\n\n\n"
-
     @reading = current_user.readings.find(params[:id])
     @reading.update!(user_input: params[:reading][:user_input])
 

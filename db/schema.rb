@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_07_235920) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_09_230532) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -87,6 +87,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_07_235920) do
     t.string "first_name"
     t.string "last_name"
     t.string "password_digest"
+    t.integer "streak_count", default: 0
+    t.date "streak_last_date"
     t.datetime "updated_at", null: false
   end
 
