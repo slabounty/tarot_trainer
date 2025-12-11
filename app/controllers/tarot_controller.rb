@@ -1,6 +1,10 @@
 class TarotController < ApplicationController
   before_action :require_login
 
+  def index
+    @card = TarotCard.random_card
+  end
+
   def card_of_the_day
     current_user.update_tarot_streak!
 
