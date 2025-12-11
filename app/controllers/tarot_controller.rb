@@ -1,7 +1,7 @@
 class TarotController < ApplicationController
   before_action :require_login
 
-  def index
+  def explore
     @card = TarotCard.random_card
   end
 
