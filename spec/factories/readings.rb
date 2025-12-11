@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :reading do
     user { FactoryBot.create(:user) }
     spread { FactoryBot.create(:spread) }
-    prompt { "Some reading prompt" }
+    spread_prompt { FactoryBot.create(:spread_prompt, spread: spread) }
   end
 end

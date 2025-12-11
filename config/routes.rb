@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
 
+
   resources :users, only: [ :new, :create, :show ]
   get "user_home", to: "users#show"
+  get "dashboard", to: "users#dashboard", as: :dashboard
 
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"

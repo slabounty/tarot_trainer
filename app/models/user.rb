@@ -6,4 +6,22 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :email, presence: true, uniqueness: true
+
+    # call this any time the user performs a tarot action
+    def update_tarot_streak!
+      today = Date.current
+
+      if streak_last_date == today
+        # Already counted today — do nothing
+        return streak_count
+      elsif streak_last_date == today - 1.day
+        # Continue streak
+        update!(streak_count: streak_count + 1, streak_last_date: today)
+      else
+        # Reset streak
+        update!(streak_count: 1, streak_last_date: today)
+      end
+
+      streak_count
+    end
 end
