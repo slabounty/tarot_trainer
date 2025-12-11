@@ -11,7 +11,6 @@ RSpec.describe "ReadingsController", type: :request do
     let(:position2) { create(:spread_position, spread: spread, position: 2, name: "Future") }
 
     before do
-
       create(:reading_card, reading: reading, spread_position: position1)
       create(:reading_card, reading: reading, spread_position: position2)
     end
