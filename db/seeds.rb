@@ -1086,3 +1086,486 @@ add_prompts("Accept / Embrace / Let Go", [
   "How can acceptance help me grow?",
   "What am I holding onto that no longer serves me?"
 ])
+
+suit_value_tarot_cards = [
+  {
+    name: "The Fool",
+    suit: "Major Arcana",
+    value: "0",
+    order: 0
+  },
+  {
+    name: "The Magician",
+    suit: "Major Arcana",
+    value: "I",
+    order: 1
+  },
+  {
+    name: "The High Priestess",
+    suit: "Major Arcana",
+    value: "II",
+    order: 2
+  },
+  {
+    name: "The Empress",
+    suit: "Major Arcana",
+    value: "III",
+    order: 3
+  },
+  {
+    name: "The Emperor",
+    suit: "Major Arcana",
+    value: "IV",
+    order: 4
+  },
+  {
+    name: "The Hierophant",
+    suit: "Major Arcana",
+    value: "V",
+    order: 5
+  },
+  {
+    name: "The Lovers",
+    suit: "Major Arcana",
+    value: "VI",
+    order: 6
+  },
+  {
+    name: "The Chariot",
+    suit: "Major Arcana",
+    value: "VII",
+    order: 7
+  },
+  {
+    name: "Strength",
+    suit: "Major Arcana",
+    value: "VIII",
+    order: 8
+  },
+  {
+    name: "The Hermit",
+    suit: "Major Arcana",
+    value: "IX",
+    order: 9
+  },
+  {
+    name: "WheelOfFortune",
+    suit: "Major Arcana",
+    value: "X",
+    order: 10
+  },
+  {
+    name: "Justice",
+    suit: "Major Arcana",
+    value: "XI",
+    order: 11
+  },
+  {
+    name: "The Hanged Man",
+    suit: "Major Arcana",
+    value: "XII",
+    order: 12
+  },
+  {
+    name: "Death",
+    suit: "Major Arcana",
+    value: "XIII",
+    order: 13
+  },
+  {
+    name: "Temperance",
+    suit: "Major Arcana",
+    value: "XIV",
+    order: 14
+  },
+  {
+    name: "The Devil",
+    suit: "Major Arcana",
+    value: "XV",
+    order: 15
+  },
+  {
+    name: "The Tower",
+    suit: "Major Arcana",
+    value: "XVI",
+    order: 16
+  },
+  {
+    name: "The Star",
+    suit: "Major Arcana",
+    value: "XVII",
+    order: 17
+  },
+  {
+    name: "The Moon",
+    suit: "Major Arcana",
+    value: "XVII",
+    order: 18
+  },
+  {
+    name: "The Sun",
+    suit: "Major Arcana",
+    value: "XVIII",
+    order: 19
+  },
+  {
+    name: "Judgement",
+    suit: "Major Arcana",
+    value: "XIX",
+    order: 20
+  },
+  {
+    name: "The World",
+    suit: "Major Arcana",
+    value: "XX",
+    order: 21
+  },
+  {
+    name: "Ace of Cups",
+    suit: "Cups",
+    value: "Ace",
+    order: 1
+  },
+  {
+    name: "II of Cups",
+    suit: "Cups",
+    value: "II",
+    order: 2
+  },
+  {
+    name: "III of Cups",
+    suit: "Cups",
+    value: "III",
+    order: 3
+  },
+  {
+    name: "IV of Cups",
+    suit: "Cups",
+    value: "IV",
+    order: 4
+  },
+  {
+    name: "V of Cups",
+    suit: "Cups",
+    value: "V",
+    order: 5
+  },
+  {
+    name: "VI of Cups",
+    suit: "Cups",
+    value: "VI",
+    order: 6
+  },
+  {
+    name: "VII of Cups",
+    suit: "Cups",
+    value: "VII",
+    order: 7
+  },
+  {
+    name: "VIII of Cups",
+    suit: "Cups",
+    value: "VIII",
+    order: 8
+  },
+  {
+    name: "IX of Cups",
+    suit: "Cups",
+    value: "IX",
+    order: 9
+  },
+  {
+    name: "X of Cups",
+    suit: "Cups",
+    value: "X",
+    order: 10
+  },
+  {
+    name: "Page of Cups",
+    suit: "Cups",
+    value: "Page",
+    order: 11
+  },
+  {
+    name: "Knight of Cups",
+    suit: "Cups",
+    value: "Knight",
+    order: 12
+  },
+  {
+    name: "Queen of Cups",
+    suit: "Cups",
+    value: "Queen",
+    order: 13
+  },
+  {
+    name: "King of Cups",
+    suit: "Cups",
+    value: "King",
+    order: 14
+  },
+  {
+    name: "Ace of Pentacles",
+    suit: "Pentacles",
+    value: "Ace",
+    order: 1
+  },
+  {
+    name: "II of Pentacles",
+    suit: "Pentacles",
+    value: "II",
+    order: 2
+  },
+  {
+    name: "III of Pentacles",
+    suit: "Pentacles",
+    value: "III",
+    order: 3
+  },
+  {
+    name: "IV of Pentacles",
+    suit: "Pentacles",
+    value: "IV",
+    order: 4
+  },
+  {
+    name: "V of Pentacles",
+    suit: "Pentacles",
+    value: "V",
+    order: 5
+  },
+  {
+    name: "VI of Pentacles",
+    suit: "Pentacles",
+    value: "VI",
+    order: 6
+  },
+  {
+    name: "VII of Pentacles",
+    suit: "Pentacles",
+    value: "VII",
+    order: 7
+  },
+  {
+    name: "VIII of Pentacles",
+    suit: "Pentacles",
+    value: "VIII",
+    order: 8
+  },
+  {
+    name: "IX of Pentacles",
+    suit: "Pentacles",
+    value: "IX",
+    order: 9
+  },
+  {
+    name: "X of Pentacles",
+    suit: "Pentacles",
+    value: "X",
+    order: 10
+  },
+  {
+    name: "Page of Pentacles",
+    suit: "Pentacles",
+    value: "Page",
+    order: 11
+  },
+  {
+    name: "Knight of Pentacles",
+    suit: "Pentacles",
+    value: "Knight",
+    order: 12
+  },
+  {
+    name: "Queen of Pentacles",
+    suit: "Pentacles",
+    value: "Queen",
+    order: 13
+  },
+  {
+    name: "King of Pentacles",
+    suit: "Pentacles",
+    value: "King",
+    order: 14
+  },
+  {
+    name: "Ace of Swords",
+    suit: "Swords",
+    value: "Ace",
+    order: 1
+  },
+  {
+    name: "II of Swords",
+    suit: "Swords",
+    value: "II",
+    order: 2
+  },
+  {
+    name: "III of Swords",
+    suit: "Swords",
+    value: "III",
+    order: 3
+  },
+  {
+    name: "IV of Swords",
+    suit: "Swords",
+    value: "IV",
+    order: 4
+  },
+  {
+    name: "V of Swords",
+    suit: "Swords",
+    value: "V",
+    order: 5
+  },
+  {
+    name: "VI of Swords",
+    suit: "Swords",
+    value: "VI",
+    order: 6
+  },
+  {
+    name: "VII of Swords",
+    suit: "Swords",
+    value: "VII",
+    order: 7
+  },
+  {
+    name: "VIII of Swords",
+    suit: "Swords",
+    value: "VIII",
+    order: 8
+  },
+  {
+    name: "IX of Swords",
+    suit: "Swords",
+    value: "IX",
+    order: 9
+  },
+  {
+    name: "X of Swords",
+    suit: "Swords",
+    value: "X",
+    order: 10
+  },
+  {
+    name: "Page of Swords",
+    suit: "Swords",
+    value: "Page",
+    order: 11
+  },
+  {
+    name: "Knight of Swords",
+    suit: "Swords",
+    value: "Knight",
+    order: 12
+  },
+  {
+    name: "Queen of Swords",
+    suit: "Swords",
+    value: "Queen",
+    order: 13
+  },
+  {
+    name: "King of Swords",
+    suit: "Swords",
+    value: "King",
+    order: 14
+  },
+  {
+    name: "Ace of Wands",
+    suit: "Wands",
+    value: "Ace",
+    order: 1
+  },
+  {
+    name: "II of Wands",
+    suit: "Wands",
+    value: "II",
+    order: 2
+  },
+  {
+    name: "III of Wands",
+    suit: "Wands",
+    value: "III",
+    order: 3
+  },
+  {
+    name: "IV of Wands",
+    suit: "Wands",
+    value: "IV",
+    order: 4
+  },
+  {
+    name: "V of Wands",
+    suit: "Wands",
+    value: "V",
+    order: 5
+  },
+  {
+    name: "VI of Wands",
+    suit: "Wands",
+    value: "VI",
+    order: 6
+  },
+  {
+    name: "VII of Wands",
+    suit: "Wands",
+    value: "VII",
+    order: 7
+  },
+  {
+    name: "VIII of Wands",
+    suit: "Wands",
+    value: "VIII",
+    order: 8
+  },
+  {
+    name: "IX of Wands",
+    suit: "Wands",
+    value: "IX",
+    order: 9
+  },
+  {
+    name: "X of Wands",
+    suit: "Wands",
+    value: "X",
+    order: 10
+  },
+  {
+    name: "Page of Wands",
+    suit: "Wands",
+    value: "Page",
+    order: 11
+  },
+  {
+    name: "Knight of Wands",
+    suit: "Wands",
+    value: "Knight",
+    order: 12
+  },
+  {
+    name: "Queen of Wands",
+    suit: "Wands",
+    value: "Queen",
+    order: 13
+  },
+  {
+    name: "King of Wands",
+    suit: "Wands",
+    value: "King",
+    order: 14
+  }
+]
+
+suit_value_tarot_cards.each do |tarot_card|
+  card = TarotCard.find_by!(
+    name: tarot_card[:name],
+  )
+  if card.suit == nil
+    card.suit = tarot_card[:suit]
+    card.value = tarot_card[:value]
+    card.order = tarot_card[:order]
+    card.save!
+  end
+end

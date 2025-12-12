@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_09_230532) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_12_164119) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -78,7 +78,10 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_09_230532) do
     t.string "image_file"
     t.string "meaning"
     t.string "name"
+    t.integer "order"
+    t.string "suit"
     t.datetime "updated_at", null: false
+    t.string "value"
   end
 
   create_table "users", force: :cascade do |t|
