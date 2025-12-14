@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def dashboard
     @user = current_user
 
+    @user.update_tarot_streak!
+
     @streak = current_user.streak_count
 
     today = Date.current

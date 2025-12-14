@@ -2,6 +2,8 @@ class TarotController < ApplicationController
   before_action :require_login
 
   def explore
+    current_user.update_tarot_streak!
+
     @card = TarotCard.random_card
   end
 
@@ -47,6 +49,8 @@ class TarotController < ApplicationController
   end
 
   def all_cards
+    current_user.update_tarot_streak!
+
     # Order: Major Arcana first, then suits in desired order, then card order within each suit
     suit_order = [
       "Major Arcana",
