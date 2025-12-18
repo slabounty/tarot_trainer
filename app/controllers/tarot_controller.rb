@@ -51,7 +51,6 @@ class TarotController < ApplicationController
   def all_cards
     current_user.update_tarot_streak!
 
-    # Order: Major Arcana first, then suits in desired order, then card order within each suit
     suit_order = [
       "Major Arcana",
       "Cups",
@@ -60,15 +59,22 @@ class TarotController < ApplicationController
       "Wands"
     ]
 
-    @cards = TarotCard.order(
-      Arel.sql("CASE suit
-        WHEN 'Major Arcana' THEN 1
-        WHEN 'Cups' THEN 2
-        WHEN 'Pentacles' THEN 3
-        WHEN 'Swords' THEN 4
-        WHEN 'Wands' THEN 5
-        ELSE 6 END"),
-      :order
-    ).group_by(&:suit)
+    @cards = TarotCard
+      .includes(:suit)
+      .joins(:suit)
+      .order(
+        Arel.sql(<<~SQL),
+          CASE suits.name
+            WHEN 'Major Arcana' THEN 1
+            WHEN 'Cups' THEN 2
+            WHEN 'Pentacles' THEN 3
+            WHEN 'Swords' THEN 4
+            WHEN 'Wands' THEN 5
+            ELSE 6
+          END
+        SQL
+        :order
+      )
+      .group_by(&:suit)
   end
 end
