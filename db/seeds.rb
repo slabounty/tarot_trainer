@@ -36,7 +36,7 @@ tarot_cards = [
     question: "What new beginning or sense of freedom is ready to enter your life today?",
     suit: "Major Arcana",
     value: "0",
-    order: 0,
+    order: 0
   },
   {
     image_file: "01-TheMagician.png",
@@ -47,7 +47,7 @@ tarot_cards = [
     question: "Where can you channel your creativity and take inspired action right now?",
     suit: "Major Arcana",
     value: "I",
-    order: 1,
+    order: 1
   },
   {
     image_file: "02-TheHighPriestess.png",
@@ -58,7 +58,7 @@ tarot_cards = [
     question: "How can you open yourself to receive more love or creative energy today?",
     suit: "Major Arcana",
     value: "II",
-    order: 2,
+    order: 2
   },
   {
     image_file: "03-TheEmpress.png",
@@ -69,7 +69,7 @@ tarot_cards = [
     question: "How can you open yourself to receive more love or creative energy today?",
     suit: "Major Arcana",
     value: "III",
-    order: 3,
+    order: 3
   },
   {
     image_file: "04-TheEmperor.png",
@@ -80,7 +80,7 @@ tarot_cards = [
     question: "Where are you being called to step into your personal power?",
     suit: "Major Arcana",
     value: "IV",
-    order: 4,
+    order: 4
   },
   {
     image_file: "05-TheHierophant.png",
@@ -91,7 +91,7 @@ tarot_cards = [
     question: "What traditions or teachings are guiding you at this moment?",
     suit: "Major Arcana",
     value: "V",
-    order: 5,
+    order: 5
   },
   {
     image_file: "06-TheLovers.png",
@@ -102,7 +102,7 @@ tarot_cards = [
     question: "How can you bring more alignment or harmony into your relationships?",
     suit: "Major Arcana",
     value: "VI",
-    order: 6,
+    order: 6
   },
   {
     image_file: "07-TheChariot.png",
@@ -113,7 +113,7 @@ tarot_cards = [
     question: "What momentum is building in your life, and how can you support it?",
     suit: "Major Arcana",
     value: "VII",
-    order: 7,
+    order: 7
   },
   {
     image_file: "08-Strength.png",
@@ -124,7 +124,7 @@ tarot_cards = [
     question: "Which obstacles are you ready to overcome through endurance and focus?",
     suit: "Major Arcana",
     value: "VIII",
-    order: 8,
+    order: 8
   },
   {
     image_file: "09-TheHermit.png",
@@ -135,7 +135,7 @@ tarot_cards = [
     question: "Where could solitude help you access deeper wisdom?",
     suit: "Major Arcana",
     value: "IX",
-    order: 9,
+    order: 9
   },
   {
     image_file: "10-WheelOfFortune.png",
@@ -146,7 +146,7 @@ tarot_cards = [
     question: "What changes or cycles are unfolding that you can embrace rather than resist?",
     suit: "Major Arcana",
     value: "X",
-    order: 10,
+    order: 10
   },
   {
     image_file: "11-Justice.png",
@@ -157,7 +157,7 @@ tarot_cards = [
     question: "Where do you need to restore truth or balance in your life?",
     suit: "Major Arcana",
     value: "XI",
-    order: 11,
+    order: 11
   },
   {
     image_file: "12-TheHangedMan.png",
@@ -168,7 +168,7 @@ tarot_cards = [
     question: "What new perspective could shift your understanding of a situation?",
     suit: "Major Arcana",
     value: "XII",
-    order: 12,
+    order: 12
   },
   {
     image_file: "13-Death.png",
@@ -179,7 +179,7 @@ tarot_cards = [
     question: "What is ready to be released so transformation can take place?",
     suit: "Major Arcana",
     value: "XIII",
-    order: 13,
+    order: 13
   },
   {
     image_file: "14-Temperance.png",
@@ -190,7 +190,7 @@ tarot_cards = [
     question: "Where is moderation or patience being requested of you?",
     suit: "Major Arcana",
     value: "XIV",
-    order: 14,
+    order: 14
   },
   {
     image_file: "15-TheDevil.png",
@@ -201,7 +201,7 @@ tarot_cards = [
     question: "What habits or attachments might be holding you back?",
     suit: "Major Arcana",
     value: "XV",
-    order: 15,
+    order: 15
   },
   {
     image_file: "16-TheTower.png",
@@ -212,7 +212,7 @@ tarot_cards = [
     question: "What sudden change is reshaping things for the better?",
     suit: "Major Arcana",
     value: "XVI",
-    order: 16,
+    order: 16
   },
   {
     image_file: "17-TheStar.png",
@@ -223,7 +223,7 @@ tarot_cards = [
     question: "Where are hope and healing trying to take root in your life?",
     suit: "Major Arcana",
     value: "XVII",
-    order: 17,
+    order: 17
   },
   {
     image_file: "18-TheMoon.png",
@@ -234,7 +234,7 @@ tarot_cards = [
     question: "What illusions or dreams need clarity today?",
     suit: "Major Arcana",
     value: "XVII",
-    order: 18,
+    order: 18
   },
   {
     image_file: "19-TheSun.png",
@@ -245,7 +245,7 @@ tarot_cards = [
     question: "What clarity or renewed optimism is coming into focus?",
     suit: "Major Arcana",
     value: "XVIII",
-    order: 19,
+    order: 19
   },
   {
     image_file: "20-Judgement.png",
@@ -256,7 +256,7 @@ tarot_cards = [
     question: "Where are you awakening to a deeper truth or acceptance?",
     suit: "Major Arcana",
     value: "XIX",
-    order: 20,
+    order: 20
   },
   {
     image_file: "21-TheWorld.png",
@@ -267,7 +267,7 @@ tarot_cards = [
     question: "What success or completion can you acknowledge and celebrate?",
     suit: "Major Arcana",
     value: "XX",
-    order: 21,
+    order: 21
   },
   {
     image_file: "Cups01.png",
@@ -278,7 +278,7 @@ tarot_cards = [
     question: "How can you invite new love or emotional openness today?",
     suit: "Cups",
     value: "Ace",
-    order: 1,
+    order: 1
   },
   {
     image_file: "Cups02.png",
@@ -289,7 +289,7 @@ tarot_cards = [
     question: "Where is partnership or collaboration bringing strength?",
     suit: "Cups",
     value: "II",
-    order: 2,
+    order: 2
   },
   {
     image_file: "Cups03.png",
@@ -300,7 +300,7 @@ tarot_cards = [
     question: "What deserves celebration or gratitude in your life?",
     suit: "Cups",
     value: "III",
-    order: 3,
+    order: 3
   },
   {
     image_file: "Cups04.png",
@@ -311,7 +311,7 @@ tarot_cards = [
     question: "Where might apathy or stagnation be blocking your growth?",
     suit: "Cups",
     value: "IV",
-    order: 4,
+    order: 4
   },
   {
     image_file: "Cups05.png",
@@ -322,7 +322,7 @@ tarot_cards = [
     question: "What grief or sadness needs gentle acknowledgment?",
     suit: "Cups",
     value: "V",
-    order: 5,
+    order: 5
   },
   {
     image_file: "Cups06.png",
@@ -333,7 +333,7 @@ tarot_cards = [
     question: "Which memories or past experiences bring harmony?",
     suit: "Cups",
     value: "VI",
-    order: 6,
+    order: 6
   },
   {
     image_file: "Cups07.png",
@@ -344,7 +344,7 @@ tarot_cards = [
     question: "What possibilities or daydreams are calling to you?",
     suit: "Cups",
     value: "VII",
-    order: 7,
+    order: 7
   },
   {
     image_file: "Cups08.png",
@@ -355,7 +355,7 @@ tarot_cards = [
     question: "What are you ready to walk away from for your wellbeing?",
     suit: "Cups",
     value: "VIII",
-    order: 8,
+    order: 8
   },
   {
     image_file: "Cups09.png",
@@ -366,7 +366,7 @@ tarot_cards = [
     question: "Where can you recognize satisfaction or abundance right now?",
     suit: "Cups",
     value: "IX",
-    order: 9,
+    order: 9
   },
   {
     image_file: "Cups10.png",
@@ -377,7 +377,7 @@ tarot_cards = [
     question: "What brings you happiness and emotional fulfillment today?",
     suit: "Cups",
     value: "X",
-    order: 10,
+    order: 10
   },
   {
     image_file: "Cups11.png",
@@ -388,7 +388,7 @@ tarot_cards = [
     question: "What playful or loving message is trying to reach you?",
     suit: "Cups",
     value: "Page",
-    order: 11,
+    order: 11
   },
   {
     image_file: "Cups12.png",
@@ -399,7 +399,7 @@ tarot_cards = [
     question: "Where are emotions moving quickly or asking for expression?",
     suit: "Cups",
     value: "Knight",
-    order: 12,
+    order: 12
   },
   {
     image_file: "Cups13.png",
@@ -410,7 +410,7 @@ tarot_cards = [
     question: "How can you nurture your feminine energy or intuition today?",
     suit: "Cups",
     value: "Queen",
-    order: 13,
+    order: 13
   },
   {
     image_file: "Cups14.png",
@@ -421,7 +421,7 @@ tarot_cards = [
     question: "What emotional stability or empathy can you offer yourself?",
     suit: "Cups",
     value: "King",
-    order: 14,
+    order: 14
   },
   {
     image_file: "Pentacles01.png",
@@ -432,7 +432,7 @@ tarot_cards = [
     question: "What new beginning is leading toward abundance?",
     suit: "Pentacles",
     value: "Ace",
-    order: 1,
+    order: 1
   },
   {
     image_file: "Pentacles02.png",
@@ -443,7 +443,7 @@ tarot_cards = [
     question: "Where can you cultivate balance and stability?",
     suit: "Pentacles",
     value: "II",
-    order: 2,
+    order: 2
   },
   {
     image_file: "Pentacles03.png",
@@ -454,7 +454,7 @@ tarot_cards = [
     question: "What new doors or opportunities are opening for you?",
     suit: "Pentacles",
     value: "III",
-    order: 3,
+    order: 3
   },
   {
     image_file: "Pentacles04.png",
@@ -465,7 +465,7 @@ tarot_cards = [
     question: "How can you conserve resources and build long-term stability?",
     suit: "Pentacles",
     value: "IV",
-    order: 4,
+    order: 4
   },
   {
     image_file: "Pentacles05.png",
@@ -476,7 +476,7 @@ tarot_cards = [
     question: "Where are you feeling depleted, and what support do you need?",
     suit: "Pentacles",
     value: "V",
-    order: 5,
+    order: 5
   },
   {
     image_file: "Pentacles06.png",
@@ -487,7 +487,7 @@ tarot_cards = [
     question: "Where can you practice generosity or share your resources?",
     suit: "Pentacles",
     value: "VI",
-    order: 6,
+    order: 6
   },
   {
     image_file: "Pentacles07.png",
@@ -498,7 +498,7 @@ tarot_cards = [
     question: "What area of life is inviting patience and steady growth?",
     suit: "Pentacles",
     value: "VII",
-    order: 7,
+    order: 7
   },
   {
     image_file: "Pentacles08.png",
@@ -509,7 +509,7 @@ tarot_cards = [
     question: "Where will hard work now lead to productivity later?",
     suit: "Pentacles",
     value: "VIII",
-    order: 8,
+    order: 8
   },
   {
     image_file: "Pentacles09.png",
@@ -520,7 +520,7 @@ tarot_cards = [
     question: "What success or enjoyment can you embrace today?",
     suit: "Pentacles",
     value: "IX",
-    order: 9,
+    order: 9
   },
   {
     image_file: "Pentacles10.png",
@@ -531,7 +531,7 @@ tarot_cards = [
     question: "How does family or legacy influence your choices today?",
     suit: "Pentacles",
     value: "X",
-    order: 10,
+    order: 10
   },
   {
     image_file: "Pentacles11.png",
@@ -542,7 +542,7 @@ tarot_cards = [
     question: "Where are solid beginnings forming in your material world?",
     suit: "Pentacles",
     value: "Page",
-    order: 11,
+    order: 11
   },
   {
     image_file: "Pentacles12.png",
@@ -553,7 +553,7 @@ tarot_cards = [
     question: "What steady progress are you making toward long-term abundance?",
     suit: "Pentacles",
     value: "Knight",
-    order: 12,
+    order: 12
   },
   {
     image_file: "Pentacles13.png",
@@ -564,7 +564,7 @@ tarot_cards = [
     question: "Where can dependability or generosity shape your actions?",
     suit: "Pentacles",
     value: "Queen",
-    order: 13,
+    order: 13
   },
   {
     image_file: "Pentacles14.png",
@@ -575,7 +575,7 @@ tarot_cards = [
     question: "Where is wealth, generosity, or stability present in your life?",
     suit: "Pentacles",
     value: "King",
-    order: 14,
+    order: 14
   },
   {
     image_file: "Swords01.png",
@@ -586,7 +586,7 @@ tarot_cards = [
     question: "What new idea or moment of clarity is emerging?",
     suit: "Swords",
     value: "Ace",
-    order: 1,
+    order: 1
   },
   {
     image_file: "Swords02.png",
@@ -597,7 +597,7 @@ tarot_cards = [
     question: "What indecision requires openness instead of self-protection?",
     suit: "Swords",
     value: "II",
-    order: 2,
+    order: 2
   },
   {
     image_file: "Swords03.png",
@@ -608,7 +608,7 @@ tarot_cards = [
     question: "What pain needs acknowledgment before healing can begin?",
     suit: "Swords",
     value: "III",
-    order: 3,
+    order: 3
   },
   {
     image_file: "Swords04.png",
@@ -619,7 +619,7 @@ tarot_cards = [
     question: "Where do you need rest or introspection?",
     suit: "Swords",
     value: "IV",
-    order: 4,
+    order: 4
   },
   {
     image_file: "Swords05.png",
@@ -630,7 +630,7 @@ tarot_cards = [
     question: "How can you navigate conflict with clarity and patience?",
     suit: "Swords",
     value: "V",
-    order: 5,
+    order: 5
   },
   {
     image_file: "Swords06.png",
@@ -641,7 +641,7 @@ tarot_cards = [
     question: "What healing journey or transition are you ready to begin?",
     suit: "Swords",
     value: "VI",
-    order: 6,
+    order: 6
   },
   {
     image_file: "Swords07.png",
@@ -652,7 +652,7 @@ tarot_cards = [
     question: "Where is strategy or careful planning necessary?",
     suit: "Swords",
     value: "VII",
-    order: 7,
+    order: 7
   },
   {
     image_file: "Swords08.png",
@@ -663,7 +663,7 @@ tarot_cards = [
     question: "What restriction or trapped feeling can you release?",
     suit: "Swords",
     value: "VIII",
-    order: 8,
+    order: 8
   },
   {
     image_file: "Swords09.png",
@@ -674,7 +674,7 @@ tarot_cards = [
     question: "What anxiety can you soothe with truth and presence?",
     suit: "Swords",
     value: "IX",
-    order: 9,
+    order: 9
   },
   {
     image_file: "Swords10.png",
@@ -685,7 +685,7 @@ tarot_cards = [
     question: "What ending is making space for a new beginning?",
     suit: "Swords",
     value: "X",
-    order: 10,
+    order: 10
   },
   {
     image_file: "Swords11.png",
@@ -696,7 +696,7 @@ tarot_cards = [
     question: "Where can you channel enthusiasm and curiosity?",
     suit: "Swords",
     value: "Page",
-    order: 11,
+    order: 11
   },
   {
     image_file: "Swords12.png",
@@ -707,7 +707,7 @@ tarot_cards = [
     question: "What truth needs to be spoken with clarity and assertiveness?",
     suit: "Swords",
     value: "Knight",
-    order: 12,
+    order: 12
   },
   {
     image_file: "Swords13.png",
@@ -718,7 +718,7 @@ tarot_cards = [
     question: "What decisive action can bring honesty into a situation?",
     suit: "Swords",
     value: "Queen",
-    order: 13,
+    order: 13
   },
   {
     image_file: "Swords14.png",
@@ -729,7 +729,7 @@ tarot_cards = [
     question: "Where is intellectual leadership being asked of you?",
     suit: "Swords",
     value: "King",
-    order: 14,
+    order: 14
   },
   {
     image_file: "Wands01.png",
@@ -740,7 +740,7 @@ tarot_cards = [
     question: "What inspiration or creativity wants expression today?",
     suit: "Wands",
     value: "Ace",
-    order: 1,
+    order: 1
   },
   {
     image_file: "Wands02.png",
@@ -751,7 +751,7 @@ tarot_cards = [
     question: "What future plans require vision and choice?",
     suit: "Wands",
     value: "II",
-    order: 2,
+    order: 2
   },
   {
     image_file: "Wands03.png",
@@ -762,7 +762,7 @@ tarot_cards = [
     question: "Where is expansion or personal growth unfolding?",
     suit: "Wands",
     value: "III",
-    order: 3,
+    order: 3
   },
   {
     image_file: "Wands04.png",
@@ -773,7 +773,7 @@ tarot_cards = [
     question: "What special moment deserves celebration?",
     suit: "Wands",
     value: "IV",
-    order: 4,
+    order: 4
   },
   {
     image_file: "Wands05.png",
@@ -784,7 +784,7 @@ tarot_cards = [
     question: "What competition or challenge is sharpening your skills?",
     suit: "Wands",
     value: "V",
-    order: 5,
+    order: 5
   },
   {
     image_file: "Wands06.png",
@@ -795,7 +795,7 @@ tarot_cards = [
     question: "Where are you being recognized for your efforts?",
     suit: "Wands",
     value: "VI",
-    order: 6,
+    order: 6
   },
   {
     image_file: "Wands07.png",
@@ -806,7 +806,7 @@ tarot_cards = [
     question: "Where is assertiveness or boundary-keeping needed?",
     suit: "Wands",
     value: "VII",
-    order: 7,
+    order: 7
   },
   {
     image_file: "Wands08.png",
@@ -817,7 +817,7 @@ tarot_cards = [
     question: "Where is quick action required to move things forward?",
     suit: "Wands",
     value: "VIII",
-    order: 8,
+    order: 8
   },
   {
     image_file: "Wands09.png",
@@ -828,7 +828,7 @@ tarot_cards = [
     question: "What requires persistence or self-reliance right now?",
     suit: "Wands",
     value: "IX",
-    order: 9,
+    order: 9
   },
   {
     image_file: "Wands10.png",
@@ -839,7 +839,7 @@ tarot_cards = [
     question: "What burden can you set down to lighten your path?",
     suit: "Wands",
     value: "X",
-    order: 10,
+    order: 10
   },
   {
     image_file: "Wands11.png",
@@ -850,7 +850,7 @@ tarot_cards = [
     question: "Where is adventure calling you to be bold?",
     suit: "Wands",
     value: "Page",
-    order: 11,
+    order: 11
   },
   {
     image_file: "Wands12.png",
@@ -861,7 +861,7 @@ tarot_cards = [
     question: "What passion or fast-moving energy is pushing you forward?",
     suit: "Wands",
     value: "Knight",
-    order: 12,
+    order: 12
   },
   {
     image_file: "Wands13.png",
@@ -872,7 +872,7 @@ tarot_cards = [
     question: "How can you express creativity or ambition today?",
     suit: "Wands",
     value: "Queen",
-    order: 13,
+    order: 13
   },
   {
     image_file: "Wands14.png",
@@ -883,14 +883,13 @@ tarot_cards = [
     question: "Where are you being called into your power or authority?",
     suit: "Wands",
     value: "King",
-    order: 14,
+    order: 14
   }
 ]
 
 
 tarot_cards.each do |tarot_card|
   suit = suit_hash[tarot_card[:suit]]
-  puts "card suit = #{tarot_card[:suit]} suit = #{suit.inspect}"
   TarotCard.find_or_create_by!(
     image_file: tarot_card[:image_file],
     name: tarot_card[:name],
