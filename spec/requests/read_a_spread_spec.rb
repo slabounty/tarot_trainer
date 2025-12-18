@@ -18,10 +18,13 @@ RSpec.describe "Read a Spread", type: :request do
     s
   end
 
+  # We can use any suit
+  let(:suit) { FactoryBot.create(:suit) }
+
   # Create 10 tarot cards to sample from
   let!(:cards) do
     (1..10).map do |i|
-      TarotCard.create!(name: "Card #{i}", meaning: "Meaning #{i}", image_file: "test_card_image.png")
+      TarotCard.create!(name: "Card #{i}", meaning: "Meaning #{i}", image_file: "test_card_image.png", suit: suit)
     end
   end
 

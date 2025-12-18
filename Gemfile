@@ -54,6 +54,8 @@ group :development, :test do
 
   gem "factory_bot_rails", "~> 6.5"
   gem "rspec-rails", "~> 8.0.2" # Use the latest stable version
+
+  gem 'pry-rails'
 end
 
 group :development do
