@@ -1410,7 +1410,7 @@ reversed_tarot_cards = [
 ]
 
 reversed_tarot_cards.each do |reversed_tarot_card|
-  tarot_card = TarotCard.find_by!( name: reversed_tarot_card[:name])
+  tarot_card = TarotCard.find_by!(name: reversed_tarot_card[:name])
   if tarot_card.reversed_meaning.nil?
     tarot_card.reversed_meaning = reversed_tarot_card[:reversed_meaning]
     tarot_card.save
