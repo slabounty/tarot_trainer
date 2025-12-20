@@ -1092,3 +1092,327 @@ add_prompts("Accept / Embrace / Let Go", [
   "How can acceptance help me grow?",
   "What am I holding onto that no longer serves me?"
 ])
+
+
+reversed_tarot_cards = [
+  {
+    name: "The Fool",
+    reversed_meaning: "Naivete, fear of change"
+  },
+  {
+    name: "The Magician",
+    reversed_meaning: "Disconnection from personal power, manipulative"
+  },
+  {
+    name: "The High Priestess",
+    reversed_meaning: "Disconnection from intuition, refusal to look within"
+  },
+  {
+    name: "The Empress",
+    reversed_meaning: "Disconnection, creative blocks"
+  },
+  {
+    name: "The Emperor",
+    reversed_meaning: "Inability to take action, defensive/reactive"
+  },
+  {
+    name: "The Hierophant",
+    reversed_meaning: "Rigid beliefs, refusal to learn"
+  },
+  {
+    name: "The Lovers",
+    reversed_meaning: "Disharmony, imbalance"
+  },
+  {
+    name: "The Chariot",
+    reversed_meaning: "Inability to move forward, stagnation"
+  },
+  {
+    name: "Strength",
+    reversed_meaning: "Apprehension, lack of confidence"
+  },
+  {
+    name: "The Hermit",
+    reversed_meaning: "Lonliness, isolation"
+  },
+  {
+    name: "WheelOfFortune",
+    reversed_meaning: "Delays, setbacks"
+  },
+  {
+    name: "Justice",
+    reversed_meaning: "Imbalance, unfair treatment"
+  },
+  {
+    name: "The Hanged Man",
+    reversed_meaning: "Impatience, inertia"
+  },
+  {
+    name: "Death",
+    reversed_meaning: "Clinging to the past, refusing to change"
+  },
+  {
+    name: "Temperance",
+    reversed_meaning: "Imbalance, pushing for results"
+  },
+  {
+    name: "The Devil",
+    reversed_meaning: "Release, liberation"
+  },
+  {
+    name: "The Tower",
+    reversed_meaning: "Hanging on, fear of letting go"
+  },
+  {
+    name: "The Star",
+    reversed_meaning: "Loss of faith, disconnection from source"
+  },
+  {
+    name: "The Moon",
+    reversed_meaning: "Bypassing difficulties, refusing to acknowledge the truth"
+  },
+  {
+    name: "The Sun",
+    reversed_meaning: "Pessimism, confusion"
+  },
+  {
+    name: "Judgement",
+    reversed_meaning: "Self-doubt, resentment"
+  },
+  {
+    name: "The World",
+    reversed_meaning: "Incomplete action, delayed celebration"
+  },
+  {
+    name: "Ace of Cups",
+    reversed_meaning: "Depletion, disappointment"
+  },
+  {
+    name: "II of Cups",
+    reversed_meaning: "Disharmony, breakup"
+  },
+  {
+    name: "III of Cups",
+    reversed_meaning: "Feeling emotionally drained, overindulgence"
+  },
+  {
+    name: "IV of Cups",
+    reversed_meaning: "Refusal to change, stuck in a bad mood"
+  },
+  {
+    name: "V of Cups",
+    reversed_meaning: "Silver linings, moving on"
+  },
+  {
+    name: "VI of Cups",
+    reversed_meaning: "Nostalgia, living in the past"
+  },
+  {
+    name: "VII of Cups",
+    reversed_meaning: "Illusions, confusion"
+  },
+  {
+    name: "VIII of Cups",
+    reversed_meaning: "Hanging on, avoiding change"
+  },
+  {
+    name: "IX of Cups",
+    reversed_meaning: "Overindulgence, arrogance"
+  },
+  {
+    name: "X of Cups",
+    reversed_meaning: "Disharmony"
+  },
+  {
+    name: "Page of Cups",
+    reversed_meaning: "Immaturity, oversensitivity"
+  },
+  {
+    name: "Knight of Cups",
+    reversed_meaning: "Perfection, disappointment"
+  },
+  {
+    name: "Queen of Cups",
+    reversed_meaning: "Suspicion, emotional distance"
+  },
+  {
+    name: "King of Cups",
+    reversed_meaning: "Unreliability, lack of boundries"
+  },
+  {
+    name: "Ace of Pentacles",
+    reversed_meaning: "Delayed abundance"
+  },
+  {
+    name: "II of Pentacles",
+    reversed_meaning: "Tension, irresponsibility"
+  },
+  {
+    name: "III of Pentacles",
+    reversed_meaning: "Burnout, lack of confidence"
+  },
+  {
+    name: "IV of Pentacles",
+    reversed_meaning: "Materialism, controlling behaviors"
+  },
+  {
+    name: "V of Pentacles",
+    reversed_meaning: "Moving on from challenges"
+  },
+  {
+    name: "VI of Pentacles",
+    reversed_meaning: "Generorsity with strings attached, inequality"
+  },
+  {
+    name: "VII of Pentacles",
+    reversed_meaning: "Impatience, procrastination"
+  },
+  {
+    name: "VIII of Pentacles",
+    reversed_meaning: "Burnout, overworking, being undervalued"
+  },
+  {
+    name: "IX of Pentacles",
+    reversed_meaning: "Materialism, lack of appreciation"
+  },
+  {
+    name: "X of Pentacles",
+    reversed_meaning: "Loss, breaking with tradition"
+  },
+  {
+    name: "Page of Pentacles",
+    reversed_meaning: "Procrastination, lacking a solid plan"
+  },
+  {
+    name: "Knight of Pentacles",
+    reversed_meaning: "Hesitation, complacency"
+  },
+  {
+    name: "Queen of Pentacles",
+    reversed_meaning: "Materialism, unreliability"
+  },
+  {
+    name: "King of Pentacles",
+    reversed_meaning: "Greed, self-centeredness"
+  },
+  {
+    name: "Ace of Swords",
+    reversed_meaning: "Confusion, indecision"
+  },
+  {
+    name: "II of Swords",
+    reversed_meaning: "Manipulation, blocked intuition"
+  },
+  {
+    name: "III of Swords",
+    reversed_meaning: "Recovery, releasing pain"
+  },
+  {
+    name: "IV of Swords",
+    reversed_meaning: "Restlessness, avoiding self-reflection"
+  },
+  {
+    name: "V of Swords",
+    reversed_meaning: "Releasing, letting go grudges"
+  },
+  {
+    name: "VI of Swords",
+    reversed_meaning: "Difficulties in moving on, staying in place"
+  },
+  {
+    name: "VII of Swords",
+    reversed_meaning: "Disorganization, paranoia"
+  },
+  {
+    name: "VIII of Swords",
+    reversed_meaning: "Release, hesitation"
+  },
+  {
+    name: "IX of Swords",
+    reversed_meaning: "Hopelessness, despair"
+  },
+  {
+    name: "X of Swords",
+    reversed_meaning: "Delayed endings, hanging on to the past"
+  },
+  {
+    name: "Page of Swords",
+    reversed_meaning: "Gossip, defensiveness"
+  },
+  {
+    name: "Knight of Swords",
+    reversed_meaning: "Pushy, aggressive"
+  },
+  {
+    name: "Queen of Swords",
+    reversed_meaning: "Criticism, defensiveness"
+  },
+  {
+    name: "King of Swords",
+    reversed_meaning: "Control, judgement"
+  },
+  {
+    name: "Ace of Wands",
+    reversed_meaning: "Hesitation, delays"
+  },
+  {
+    name: "II of Wands",
+    reversed_meaning: "Impatience, lack of planning"
+  },
+  {
+    name: "III of Wands",
+    reversed_meaning: "Delays, disappointment"
+  },
+  {
+    name: "IV of Wands",
+    reversed_meaning: "Returning to the joy of the present"
+  },
+  {
+    name: "V of Wands",
+    reversed_meaning: "Exaggeration, finding a solution"
+  },
+  {
+    name: "VI of Wands",
+    reversed_meaning: "Delayed success"
+  },
+  {
+    name: "VII of Wands",
+    reversed_meaning: "Hypervigalance, feeling defeated"
+  },
+  {
+    name: "VIII of Wands",
+    reversed_meaning: "Slowing down, exercising patience"
+  },
+  {
+    name: "IX of Wands",
+    reversed_meaning: "Giving up, delays"
+  },
+  {
+    name: "X of Wands",
+    reversed_meaning: "Pressure, exhaustion"
+  },
+  {
+    name: "Page of Wands",
+    reversed_meaning: "Unreliability, hastiness"
+  },
+  {
+    name: "Knight of Wands",
+    reversed_meaning: "Self-doubt, hesitation"
+  },
+  {
+    name: "Queen of Wands",
+    reversed_meaning: "Feeling unworthy, creative blocks"
+  },
+  {
+    name: "King of Wands",
+    reversed_meaning: "Abuse of power, bullying"
+  }
+]
+
+reversed_tarot_cards.each do |reversed_tarot_card|
+  tarot_card = TarotCard.find_by!(name: reversed_tarot_card[:name])
+  if tarot_card.reversed_meaning.nil?
+    tarot_card.reversed_meaning = reversed_tarot_card[:reversed_meaning]
+    tarot_card.save
+  end
+end

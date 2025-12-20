@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_14_191943) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_19_032304) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -86,6 +86,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_14_191943) do
     t.string "meaning"
     t.string "name"
     t.integer "order"
+    t.string "reversed_meaning"
     t.integer "suit_id", null: false
     t.datetime "updated_at", null: false
     t.string "value"

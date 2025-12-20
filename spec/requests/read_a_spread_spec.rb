@@ -24,7 +24,7 @@ RSpec.describe "Read a Spread", type: :request do
   # Create 10 tarot cards to sample from
   let!(:cards) do
     (1..10).map do |i|
-      TarotCard.create!(name: "Card #{i}", meaning: "Meaning #{i}", image_file: "test_card_image.png", suit: suit)
+      TarotCard.create!(name: "Card #{i}", meaning: "Meaning #{i}", reversed_meaning: "Reversed meaning #{i}", image_file: "test_card_image.png", suit: suit)
     end
   end
 
