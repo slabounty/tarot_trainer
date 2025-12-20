@@ -14,6 +14,7 @@ RSpec.describe "Explore the Tarot", type: :request do
     expect(response.body).to include("Explore the Tarot")
     expect(response.body).to include("Name")
     expect(response.body).to include("Meaning")
+    expect(response.body).to include("Reversed Meaning")
     expect(response.body).to include("Arcana")
     expect(response.body).to include("Element")
   end

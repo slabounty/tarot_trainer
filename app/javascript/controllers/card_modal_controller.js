@@ -18,7 +18,8 @@ export default class extends Controller {
     this.contentTarget.innerHTML = `
       <p><strong>Suit:</strong> ${event.currentTarget.dataset.suit}</p>
       <p><strong>Value:</strong> ${event.currentTarget.dataset.value}</p>
-      <p class="mt-2">${event.currentTarget.dataset.meaning}</p>
+      <p class="mt-2"><strong>Meaning:</strong> ${event.currentTarget.dataset.meaning}</p>
+      <p class="mt-2"><strong>Reversed Meaning:</strong> ${event.currentTarget.dataset.reversedMeaning}</p>
     `
 
     this.modalTarget.classList.remove("hidden")
