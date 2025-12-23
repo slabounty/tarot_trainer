@@ -5,7 +5,9 @@ class ReadingsController < ApplicationController
     @reading = current_user.readings.find(params[:id])
     @spread = @reading.spread
     @prompt = @reading.spread_prompt&.prompt
-    @cards = @reading.reading_cards.includes(:tarot_card, :spread_position).map(&:tarot_card)
+    reading_cards = @reading.reading_cards
+    @cards = reading_cards.includes(:tarot_card, :spread_position).map(&:tarot_card)
+    @reversed = reading_cards.map(&:reversed)
     @positions = @reading.spread.spread_positions.order(:position)
   end
 

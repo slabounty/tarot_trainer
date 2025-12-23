@@ -24,30 +24,31 @@ class TarotController < ApplicationController
   def read_a_spread
     current_user.update_tarot_streak!
 
-    @spread = Spread.order("RANDOM()").first
+    spread = Spread.random_spread
 
     # Pick a random question for the spread
-    spread_prompt = @spread.spread_prompts.order("RANDOM()").first
-    @prompt = spread_prompt.prompt
+    spread_prompt = spread.spread_prompts.order("RANDOM()").first
+    prompt = spread_prompt.prompt
 
     # Create the reading
-    @reading = current_user.readings.create!(spread: @spread, spread_prompt: spread_prompt)
+    reading = current_user.readings.create!(spread: spread, spread_prompt: spread_prompt)
 
     # Pick the right number of cards
-    @cards = TarotCard.random_cards(@spread.spread_positions.count)
+    cards = TarotCard.random_cards(spread.spread_positions.count)
 
     # Fetch ordered positions
-    @positions = @spread.spread_positions.order(:position)
+    positions = spread.spread_positions.order(:position)
 
     # Create the join rows
-    @positions.each_with_index do |pos, i|
-      @reading.reading_cards.create!(
-        tarot_card: @cards[i],
-        spread_position: pos
+    positions.each_with_index do |pos, i|
+      reading.reading_cards.create!(
+        tarot_card: cards[i],
+        spread_position: pos,
+        reversed: Random.rand < 0.5 ? true : false
       )
     end
 
-    redirect_to reading_path(@reading)
+    redirect_to reading_path(reading)
   end
 
   def all_cards

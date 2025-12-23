@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_23_010438) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_23_182235) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_23_010438) do
   create_table "reading_cards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "reading_id", null: false
+    t.boolean "reversed"
     t.integer "spread_position_id", null: false
     t.integer "tarot_card_id", null: false
     t.datetime "updated_at", null: false
