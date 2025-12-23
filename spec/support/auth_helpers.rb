@@ -16,6 +16,5 @@ module AuthHelpers
       email: user.email,
       password: password
     }
-    follow_redirect!
   end
 end

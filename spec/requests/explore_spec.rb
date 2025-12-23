@@ -5,7 +5,7 @@ RSpec.describe "Explore the Tarot", type: :request do
   let(:user) { create(:user) }
 
   before do
-    post login_path, params: { email: user.email, password: "password" }
+    login_user(user, password: "password")
   end
 
   it "shows a card" do

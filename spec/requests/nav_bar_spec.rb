@@ -22,7 +22,7 @@ RSpec.describe "Navbar visibility", type: :request do
 
       it "shows the tarot buttons and Logout" do
         # Log the user in
-        post login_path, params: { email: user.email, password: "password" }
+        login_user(user, password: "password")
         follow_redirect!
 
         get root_path

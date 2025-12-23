@@ -23,7 +23,9 @@ RSpec.describe "ReadingsController", type: :request do
     end
 
     context "when logged in" do
-      before { post login_path, params: { email: user.email, password: "password" } }
+      before do
+        login_user(user, password: "password")
+      end
 
       it "loads the reading successfully" do
         get reading_path(reading)
@@ -42,7 +44,7 @@ RSpec.describe "ReadingsController", type: :request do
     let(:reading) { create(:reading, user: user, user_input: nil) }
 
     before do
-      post login_path, params: { email: user.email, password: "password" }
+      login_user(user, password: "password")
     end
 
     it "updates the reading and redirects back" do

@@ -7,9 +7,15 @@
 
     <!-- Left: tarot card -->
     <div>
-      <%= image_tag "tarot/#{@card.image_file}",
-            class: "w-64 cursor-pointer",
-            data: { action: "click->card#showInfo" } %>
+      <% if @reversed %>
+        <%= image_tag "tarot/#{@card.image_file}",
+              class: "w-64 cursor-pointer #{'rotate-180'}",
+              data: { action: "click->card#showInfo" } %>
+      <% else %>
+        <%= image_tag "tarot/#{@card.image_file}",
+              class: "w-64 cursor-pointer",
+              data: { action: "click->card#showInfo" } %>
+      <% end %>
     </div>
 
     <!-- Right: hidden text that appears after tapping -->
@@ -20,15 +26,17 @@
         <p class="text-gray-700"><%= @card.name %></p>
       </div>
 
-      <div>
-        <h2 class="text-xl font-bold mb-1">Meaning</h2>
-        <p class="text-gray-700"><%= @card.meaning %></p>
-      </div>
-
-      <div>
-        <h2 class="text-xl font-bold mb-1">Reversed Meaning</h2>
-        <p class="text-gray-700"><%= @card.reversed_meaning %></p>
-      </div>
+      <% if @reversed %>
+        <div>
+          <h2 class="text-xl font-bold mb-1">Reversed Meaning</h2>
+          <p class="text-gray-700"><%= @card.reversed_meaning %></p>
+        </div>
+      <% else %>
+        <div>
+          <h2 class="text-xl font-bold mb-1">Meaning</h2>
+          <p class="text-gray-700"><%= @card.meaning %></p>
+        </div>
+      <% end %>
 
       <div>
         <h2 class="text-xl font-bold mb-1">Prompt</h2>

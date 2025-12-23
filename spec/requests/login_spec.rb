@@ -6,10 +6,7 @@ RSpec.describe "User Login", type: :request do
 
   describe "POST /login" do
     it "logs in the user and redirects to user dashboard" do
-      post login_path, params: {
-        email: "test@example.com",
-        password: "password"
-      }
+      login_user(user, password: "password")
 
       expect(response).to redirect_to(dashboard_path)
 
@@ -26,10 +23,7 @@ RSpec.describe "User Login", type: :request do
     let!(:user) { FactoryBot.create(:user, email: "test@example.com", password: "correctpassword") }
 
     it "fails with incorrect password and shows error message" do
-      post login_path, params: {
-        email: "test@example.com",
-        password: "wrongpassword"
-      }
+      login_user(user, password: "wrong_password")
 
       expect(response.body).to include("Invalid email or password")
       expect(response).to have_http_status(:unprocessable_content)

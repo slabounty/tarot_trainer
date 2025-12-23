@@ -3,37 +3,44 @@ require 'rails_helper'
 
 RSpec.describe "Card of the Day", type: :request do
   let(:user) { create(:user) }
-  let!(:cards) { TarotCard.order("RANDOM()").limit(5) }
 
   before do
-    post login_path, params: { email: user.email, password: "password" }
+    login_user(user, password: "password")
   end
 
-  it "creates a CardOfTheDay for today if none exists" do
-    expect {
-      get tarot_card_of_the_day_path
-    }.to change { CardOfTheDay.count }.by(1)
+  context "when there is no card of the day" do
+    it "creates a CardOfTheDay" do
+      expect {
+        get tarot_card_of_the_day_path
+      }.to change { CardOfTheDay.count }.by(1)
 
-    record = CardOfTheDay.last
-    expect(record.user).to eq(user)
-    expect(record.date_shown).to eq(Date.current)
-    expect(record.tarot_card).to be_present
+      card_of_the_day = CardOfTheDay.last
+      expect(card_of_the_day.user).to eq(user)
+      expect(card_of_the_day.date_shown).to eq(Date.current)
+      expect(card_of_the_day.tarot_card).to be_present
+      expect(card_of_the_day.reversed).to_not be_nil
+    end
   end
 
-  it "reuses the existing CardOfTheDay for today" do
-    existing = CardOfTheDay.create!(
-      user: user,
-      tarot_card: cards.first,
-      date_shown: Date.current
-    )
+  context "when there is a card of the day for today" do
+    let(:current_date) { Date.current }
 
-    expect {
-      get tarot_card_of_the_day_path
-    }.not_to change { CardOfTheDay.count }
+    it "reuses the existing card of the day" do
+      existing = CardOfTheDay.create!(
+        user: user,
+        tarot_card: TarotCard.random_card,
+        reversed: true,
+        date_shown: current_date
+      )
 
-    # Reload from DB and ensure it's the same
-    returned = CardOfTheDay.find_by(user: user, date_shown: Date.current)
-    expect(returned.id).to eq(existing.id)
+      expect {
+        get tarot_card_of_the_day_path
+      }.not_to change { CardOfTheDay.count }
+
+      # Reload from DB and ensure it's the same
+      returned = CardOfTheDay.find_by(user: user, date_shown: current_date)
+      expect(returned.id).to eq(existing.id)
+    end
   end
 
   it "requires a logged-in user" do
