@@ -14,9 +14,11 @@ class TarotController < ApplicationController
 
     @card_of_day = current_user.card_of_the_days.find_or_create_by(date_shown: today) do |entry|
       entry.tarot_card = TarotCard.random_card
+      entry.reversed = Random.rand < 0.5 ? true : false
     end
 
     @card = @card_of_day.tarot_card
+    @reversed = @card_of_day.reversed
   end
 
   def read_a_spread

@@ -36,10 +36,7 @@ RSpec.describe "Read a Spread", type: :request do
     allow(TarotCard).to receive(:random_cards).and_return(cards)
 
     # Log the user in using Rails 8 built-in auth
-    post login_path, params: {
-      email: user.email,
-      password: "password"
-    }
+    login_user(user, password: "password")
   end
 
   describe "GET /read_a_spread" do
