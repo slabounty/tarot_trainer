@@ -71,8 +71,13 @@
             <!-- Thumbnails row -->
             <div class="flex gap-4">
               <% reading.reading_cards.includes(:tarot_card).each do |rc| %>
-                <%= image_tag "tarot/#{rc.tarot_card.image_file}",
-                    class: "w-20 h-auto rounded shadow" %>
+                <% if rc.reversed %>
+                  <%= image_tag "tarot/#{rc.tarot_card.image_file}",
+                      class: "w-20 h-auto rounded shadow #{'rotate-180'}" %>
+                <% else %>
+                  <%= image_tag "tarot/#{rc.tarot_card.image_file}",
+                      class: "w-20 h-auto rounded shadow" %>
+                <% end %>
               <% end %>
             </div>
 
