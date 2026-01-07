@@ -2,6 +2,4 @@
 class QuizOption < ApplicationRecord
   belongs_to :quiz_question
   belongs_to :tarot_card
-
 end
-

@@ -24,7 +24,7 @@ class QuizzesController < ApplicationController
         .reject { |c| c.id == correct_card.id }
         .sample(OPTIONS_PER_QUESTION - 1)
 
-      options = (wrong_cards + [correct_card]).shuffle
+      options = (wrong_cards + [ correct_card ]).shuffle
 
       options.each do |card|
         question.quiz_options.create!(
