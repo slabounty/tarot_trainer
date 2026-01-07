@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   resources :readings, only: [ :show, :update ]
   patch "/readings/:id", to: "tarot#update_reading", as: :update_reading
 
+  resources :quizzes, only: [:new, :create, :show] do
+    post :grade, on: :member
+  end
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

@@ -19,6 +19,7 @@ RSpec.describe TarotCard, type: :model do
 
   describe "number of cards" do
     it "has 78 cards" do
+      binding.pry
       expect(TarotCard.count).to eq(78)
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_23_182235) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_31_004123) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -20,6 +20,31 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_23_182235) do
     t.integer "user_id", null: false
     t.index ["tarot_card_id"], name: "index_card_of_the_days_on_tarot_card_id"
     t.index ["user_id"], name: "index_card_of_the_days_on_user_id"
+  end
+
+  create_table "quiz_options", force: :cascade do |t|
+    t.boolean "correct"
+    t.datetime "created_at", null: false
+    t.integer "quiz_question_id", null: false
+    t.integer "tarot_card_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_question_id"], name: "index_quiz_options_on_quiz_question_id"
+    t.index ["tarot_card_id"], name: "index_quiz_options_on_tarot_card_id"
+  end
+
+  create_table "quiz_questions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "quiz_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "score"
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 
   create_table "reading_cards", force: :cascade do |t|
@@ -108,6 +133,10 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_23_182235) do
 
   add_foreign_key "card_of_the_days", "tarot_cards"
   add_foreign_key "card_of_the_days", "users"
+  add_foreign_key "quiz_options", "quiz_questions"
+  add_foreign_key "quiz_options", "tarot_cards"
+  add_foreign_key "quiz_questions", "quizzes"
+  add_foreign_key "quizzes", "users"
   add_foreign_key "reading_cards", "readings"
   add_foreign_key "reading_cards", "spread_positions"
   add_foreign_key "reading_cards", "tarot_cards"
