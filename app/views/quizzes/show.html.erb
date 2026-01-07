@@ -1,0 +1,55 @@
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+  <h1 class="text-3xl font-bold mb-6 text-center">
+    Tarot Quiz
+  </h1>
+
+  <%= form_with url: grade_quiz_path(@quiz),
+                method: :post,
+                data: { turbo: false } do %>
+
+    <% @quiz.quiz_questions.each_with_index do |question, index| %>
+      <% correct_option = question.quiz_options.find(&:correct) %>
+      <% card = correct_option.tarot_card %>
+
+      <div class="mb-10">
+        <!-- Question header -->
+        <h2 class="text-xl font-semibold mb-4">
+          Question <%= index + 1 %>
+        </h2>
+
+        <!-- Card image -->
+        <div class="flex justify-center mb-4">
+          <%= image_tag "tarot/#{card.image_file}",
+                class: "w-40 rounded shadow" %>
+        </div>
+
+        <p class="text-center text-gray-600 mb-6">
+          What is the meaning of this card?
+        </p>
+
+        <!-- Options -->
+        <div class="space-y-3">
+          <% question.quiz_options.shuffle.each do |option| %>
+            <label class="flex items-start gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <%= radio_button_tag(
+                    "answers[#{question.id}]",
+                    option.id,
+                    false,
+                    class: "mt-1"
+                  ) %>
+
+              <span class="text-gray-800">
+                <%= option.tarot_card.meaning %>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="text-center">
+      <%= submit_tag "Submit Quiz",
+            class: "px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700" %>
+    </div>
+  <% end %>
+</div>

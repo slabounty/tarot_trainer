@@ -1,0 +1,35 @@
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+  <h1 class="text-2xl font-bold mb-4">Quiz Results</h1>
+
+  <p class="mb-6">
+    You scored <strong><%= @correct_count %></strong> out of
+    <strong><%= @total_questions %></strong>
+    (<%= @score_percentage %>%)
+  </p>
+
+  <% @quiz.quiz_questions.each do |question| %>
+    <% result = @results[question.id] %>
+
+    <div class="mb-6 p-4 rounded border">
+      <p class="font-semibold mb-2">
+        Card: <%= question.quiz_options.find(&:correct?).tarot_card.name %>
+      </p>
+
+      <p>
+        Your answer:
+        <span class="<%= result[:correct] ? 'text-green-600' : 'text-red-600' %>">
+          <%= result[:selected_option].tarot_card.meaning %>
+        </span>
+      </p>
+
+      <% unless result[:correct] %>
+        <p class="mt-2 text-green-700">
+          Correct answer:
+          <%= result[:correct_option].tarot_card.meaning %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to "Take another quiz", new_quiz_path, class: "btn-secondary" %>
+</div>
