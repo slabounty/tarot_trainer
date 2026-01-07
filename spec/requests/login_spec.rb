@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "User Login", type: :request do
   let(:email) { "test@example.com" }
   let!(:user) { User.create!(email: email, password: "password", password_confirmation: "password") }
+  let!(:tarot_card) { create(:tarot_card) }
 
   describe "POST /login" do
     it "logs in the user and redirects to user dashboard" do

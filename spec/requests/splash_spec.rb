@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Splash Page", type: :request do
+  let!(:tarot_card) { create(:tarot_card) }
+
   describe "GET /" do
     it "renders the landing page" do
       get root_path

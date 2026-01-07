@@ -2,6 +2,8 @@
 require "rails_helper"
 
 RSpec.describe "Navbar visibility", type: :request do
+  let!(:tarot_card) { create(:tarot_card) }
+
   describe "navigation bar" do
     context "when not logged in" do
       it "shows Sign Up and Login buttons" do

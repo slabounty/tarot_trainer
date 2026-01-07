@@ -3,6 +3,18 @@ require 'rails_helper'
 
 RSpec.describe "All Cards", type: :request do
   let(:user) { create(:user) }
+  let!(:major) { create(:suit, name: "Major Arcana") }
+  let!(:wands) { create(:suit, name: "Wands") }
+  let!(:pentacles) { create(:suit, name: "Pentacles") }
+  let!(:cups) { create(:suit, name: "Cups") }
+  let!(:swords) { create(:suit, name: "Swords") }
+  let!(:cards) { [
+    create(:tarot_card, name: "The Fool", suit: major),
+    create(:tarot_card, name: "Ace of Cups", suit: cups),
+    create(:tarot_card, name: "Ace of Wands", suit: wands),
+    create(:tarot_card, name: "Ace of Swords", suit: swords),
+    create(:tarot_card, name: "Ace of Pentacles", suit: pentacles)
+  ] }
 
   before do
     login_user(user, password: "password")
@@ -21,7 +33,7 @@ RSpec.describe "All Cards", type: :request do
     # Count tarot card images
     doc = Nokogiri::HTML(response.body)
     images = doc.css('img[src*="tarot/"]')
-    expect(images.count).to eq(78)
+    expect(images.count).to eq(TarotCard.count)
   end
 
   it "requires a logged-in user" do
