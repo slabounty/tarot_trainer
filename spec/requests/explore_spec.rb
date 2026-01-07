@@ -3,6 +3,7 @@ require 'rails_helper'
 
 RSpec.describe "Explore the Tarot", type: :request do
   let(:user) { create(:user) }
+  let!(:tarot_card) { create(:tarot_card) }
 
   before do
     login_user(user, password: "password")

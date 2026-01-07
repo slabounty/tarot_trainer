@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "User Logout", type: :request do
+  let!(:tarot_card) { create(:tarot_card) }
+
   before do
     @user = signup_and_login
   end

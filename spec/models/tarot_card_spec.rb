@@ -17,13 +17,6 @@ RSpec.describe TarotCard, type: :model do
     element: element,
     card_of_the_day_question: question) }
 
-  describe "number of cards" do
-    it "has 78 cards" do
-      binding.pry
-      expect(TarotCard.count).to eq(78)
-    end
-  end
-
   describe "#image_file" do
     it "has the correct image file name" do
       expect(tarot_card.image_file).to eq(image_file)

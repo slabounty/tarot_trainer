@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "User Signup", type: :request do
   let(:email) { "newuser@example.com" }
   let(:password) { "password123" }
+  let!(:tarot_card) { create(:tarot_card) }
 
   describe "POST /signup" do
     it "creates a new user and starts a session" do
