@@ -4,15 +4,29 @@ class QuizzesController < ApplicationController
   QUESTIONS_COUNT = 5
   OPTIONS_PER_QUESTION = 5
 
-  def index
-    # Optional — can be removed if unused
-    @quizzes = current_user.quizzes.order(created_at: :desc)
+  def new
   end
 
   def create
     quiz = current_user.quizzes.create!
 
-    tarot_cards = TarotCard.includes(:suit).all.to_a
+    tarot_cards =
+      case params[:quiz_type]
+      when "all"
+        TarotCard.includes(:suit).all
+      when "major_arcana"
+        TarotCard.includes(:suit).where(suits: { name: "Major Arcana" })
+      when "wands"
+        TarotCard.includes(:suit).where(suits: { name: "Wands" })
+      when "swords"
+        TarotCard.includes(:suit).where(suits: { name: "Swords" })
+      when "cups"
+        TarotCard.includes(:suit).where(suits: { name: "Cups" })
+      when "swords"
+        TarotCard.includes(:suit).where(suits: { name: "Swords" })
+      end
+
+    tarot_cards = tarot_cards.to_a
 
     QUESTIONS_COUNT.times do
       correct_card = tarot_cards.sample
@@ -66,8 +80,6 @@ class QuizzesController < ApplicationController
 
     @total_questions = @quiz.quiz_questions.count
     @score_percentage = ((@correct_count.to_f / @total_questions) * 100).round
-
-    puts "\n\n\nQuizzesController#grade total_questions = #{@total_questions} percentage = #{@score_percentage}\n\n\n"
 
     render :results
   end
