@@ -107,7 +107,7 @@ tarot_cards = [
   {
     image_file: "07-TheChariot.png",
     name: "The Chariot",
-    meaning: "Inspired action, mementum",
+    meaning: "Inspired action, momentum",
     arcana: "Major",
     element: "Water",
     question: "What momentum is building in your life, and how can you support it?",
