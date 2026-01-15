@@ -8,13 +8,17 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    quiz = current_user.quizzes.create!
+    quiz_type = params[:quiz_type] || "all_cards"
+
+    quiz = current_user.quizzes.create!(
+      quiz_type: quiz_type
+    )
 
     tarot_cards =
-      case params[:quiz_type]
-      when "all"
+      case quiz_type
+      when "all_cards"
         TarotCard.includes(:suit).all
-      when "major_arcana"
+      when "major"
         TarotCard.includes(:suit).where(suits: { name: "Major Arcana" })
       when "wands"
         TarotCard.includes(:suit).where(suits: { name: "Wands" })
@@ -22,8 +26,8 @@ class QuizzesController < ApplicationController
         TarotCard.includes(:suit).where(suits: { name: "Swords" })
       when "cups"
         TarotCard.includes(:suit).where(suits: { name: "Cups" })
-      when "swords"
-        TarotCard.includes(:suit).where(suits: { name: "Swords" })
+      when "pentacles"
+        TarotCard.includes(:suit).where(suits: { name: "Pentacles" })
       end
 
     tarot_cards = tarot_cards.to_a
@@ -80,6 +84,10 @@ class QuizzesController < ApplicationController
 
     @total_questions = @quiz.quiz_questions.count
     @score_percentage = ((@correct_count.to_f / @total_questions) * 100).round
+
+    # Save the quiz score
+    @quiz.score = @score_percentage
+    @quiz.save!
 
     render :results
   end

@@ -31,6 +31,11 @@ class UsersController < ApplicationController
                                    .includes(:spread, :spread_prompt)
                                    .order(created_at: :desc)
                                    .limit(3)
+
+    @recent_quizzes = current_user.quizzes
+                                  .where.not(score: nil)
+                                  .order(updated_at: :desc)
+                                  .limit(3)
   end
 
   private

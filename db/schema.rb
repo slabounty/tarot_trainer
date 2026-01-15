@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_31_004123) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_13_002312) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_31_004123) do
 
   create_table "quizzes", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.integer "quiz_type", default: 0
     t.integer "score"
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false

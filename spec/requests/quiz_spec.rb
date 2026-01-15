@@ -35,7 +35,7 @@ RSpec.describe "QuizController", type: :request do
 
     it "creates a quiz and redirects to the quiz show page" do
       expect {
-        post quizzes_path, params: { quiz_type: "all" }
+        post quizzes_path, params: { quiz_type: "all_cards" }
       }.to change(Quiz, :count).by(1)
 
       quiz = Quiz.last
@@ -48,7 +48,7 @@ RSpec.describe "QuizController", type: :request do
     end
 
     it "creates quiz questions and options" do
-      post quizzes_path, params: { quiz_type: "all" }
+      post quizzes_path, params: { quiz_type: "all_cards" }
 
       quiz = Quiz.last
 
@@ -60,8 +60,8 @@ RSpec.describe "QuizController", type: :request do
       end
     end
 
-    it "respects the selected quiz type" do
-      post quizzes_path, params: { quiz_type: "major_arcana" }
+    it "handle the major arcana" do
+      post quizzes_path, params: { quiz_type: "major" }
 
       quiz = Quiz.last
 
@@ -72,6 +72,66 @@ RSpec.describe "QuizController", type: :request do
 
       tarot_cards.each do |card|
         expect(card.suit.name).to eq("Major Arcana")
+      end
+    end
+
+    it "handles cups" do
+      post quizzes_path, params: { quiz_type: "cups" }
+
+      quiz = Quiz.last
+
+      tarot_cards =
+        quiz.quiz_questions.flat_map do |q|
+          q.quiz_options.map(&:tarot_card)
+        end.uniq
+
+      tarot_cards.each do |card|
+        expect(card.suit.name).to eq("Cups")
+      end
+    end
+
+    it "handles swords" do
+      post quizzes_path, params: { quiz_type: "swords" }
+
+      quiz = Quiz.last
+
+      tarot_cards =
+        quiz.quiz_questions.flat_map do |q|
+          q.quiz_options.map(&:tarot_card)
+        end.uniq
+
+      tarot_cards.each do |card|
+        expect(card.suit.name).to eq("Swords")
+      end
+    end
+
+    it "handles wands" do
+      post quizzes_path, params: { quiz_type: "wands" }
+
+      quiz = Quiz.last
+
+      tarot_cards =
+        quiz.quiz_questions.flat_map do |q|
+          q.quiz_options.map(&:tarot_card)
+        end.uniq
+
+      tarot_cards.each do |card|
+        expect(card.suit.name).to eq("Wands")
+      end
+    end
+
+    it "handles pentacles" do
+      post quizzes_path, params: { quiz_type: "pentacles" }
+
+      quiz = Quiz.last
+
+      tarot_cards =
+        quiz.quiz_questions.flat_map do |q|
+          q.quiz_options.map(&:tarot_card)
+        end.uniq
+
+      tarot_cards.each do |card|
+        expect(card.suit.name).to eq("Pentacles")
       end
     end
   end
@@ -118,7 +178,7 @@ RSpec.describe "QuizController", type: :request do
         expect(response.body).to include("You scored")
       end
 
-      it "calculates the correct score" do
+      it "calculates and saves the correct score" do
         post grade_quiz_path(quiz), params: {
           answers: {
             question_1.id => correct_option_1.id,
@@ -128,6 +188,10 @@ RSpec.describe "QuizController", type: :request do
 
         expect(response.body).to include("Quiz Results")
         expect(response.body).to match(/You scored.*1.*out of.*.*2.*50%/m)
+
+
+        quiz.reload
+        expect(quiz.score).to eq(50)
       end
 
       it "shows correct and incorrect answers" do
