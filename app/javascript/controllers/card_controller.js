@@ -5,6 +5,6 @@ export default class extends Controller {
   static targets = ["info"]
 
   showInfo() {
-    this.infoTarget.classList.remove("hidden")
+    this.infoTarget.classList.toggle("hidden")
   }
 }
