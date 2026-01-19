@@ -1,5 +1,7 @@
 # app/controllers/learnings_controller.rb
 class LearningsController < ApplicationController
+  before_action :require_login
+
   def new
     # just renders selection UI
   end

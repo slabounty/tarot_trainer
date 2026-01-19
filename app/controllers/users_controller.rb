@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_if_logged_in, only: [ :new, :create ]
+  before_action :require_login, only: [ :dashboard ]
 
   def new
     @user = User.new

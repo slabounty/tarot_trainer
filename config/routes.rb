@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  get "tarot/explore", to: "tarot#explore"
   get "tarot/card_of_the_day", to: "tarot#card_of_the_day"
   get "tarot/read_a_spread", to: "tarot#read_a_spread"
   get "tarot/all_cards", to: "tarot#all_cards", as: :tarot_all_cards

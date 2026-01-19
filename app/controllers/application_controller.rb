@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_if_logged_in
-    redirect_to tarot_explore_path if logged_in?
+    redirect_to dashboard_path if logged_in?
   end
 end

@@ -14,7 +14,7 @@ RSpec.describe "User Logout", type: :request do
     follow_redirect!
 
     # Try to access user_home again — it should redirect to login
-    get tarot_explore_path
+    get dashboard_path
     expect(response).to redirect_to(login_path)
   end
 end
