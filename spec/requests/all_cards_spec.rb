@@ -42,4 +42,25 @@ RSpec.describe "All Cards", type: :request do
 
     expect(response).to redirect_to(login_path)
   end
+
+  describe "favorites" do
+    context "when a favorite hasn't been set" do
+      it "shows the empty star" do
+        get tarot_all_cards_path
+        expect(response.body).to include(/☆/)
+        expect(response.body).to_not include(/⭐/)
+      end
+    end
+
+    context "when a favorite has been set" do
+      before do
+        create(:favorite,  user: user, tarot_card: cards[0])
+      end
+
+      it "shows the full star" do
+        get tarot_all_cards_path
+        expect(response.body).to include(/⭐/)
+      end
+    end
+  end
 end
