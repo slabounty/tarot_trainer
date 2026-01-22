@@ -3,23 +3,16 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["modal", "title", "content"]
 
-  connect() {
-    this.boundHandleKeydown = this.handleKeydown.bind(this)
-    document.addEventListener("keydown", this.boundHandleKeydown)
-  }
-
-  disconnect() {
-    document.removeEventListener("keydown", this.boundHandleKeydown)
-  }
-
   open(event) {
-    this.titleTarget.textContent = event.currentTarget.dataset.name
+    // if clicked element asked us not to open, bail
+    if (event.defaultPrevented) return
+
+    const el = event.currentTarget
+    this.titleTarget.textContent = el.dataset.name
 
     this.contentTarget.innerHTML = `
-      <p><strong>Suit:</strong> ${event.currentTarget.dataset.suit}</p>
-      <p><strong>Value:</strong> ${event.currentTarget.dataset.value}</p>
-      <p class="mt-2"><strong>Meaning:</strong> ${event.currentTarget.dataset.meaning}</p>
-      <p class="mt-2"><strong>Reversed Meaning:</strong> ${event.currentTarget.dataset.reversedMeaning}</p>
+      <p><strong>Meaning:</strong> ${el.dataset.meaning}</p>
+      <p><strong>Reversed:</strong> ${el.dataset.reversedMeaning}</p>
     `
 
     this.modalTarget.classList.remove("hidden")
@@ -29,9 +22,7 @@ export default class extends Controller {
     this.modalTarget.classList.add("hidden")
   }
 
-  handleKeydown(event) {
-    if (event.key === "Escape" && !this.modalTarget.classList.contains("hidden")) {
-      this.close()
-    }
+  stop(event) {
+    event.stopPropagation()
   }
 }

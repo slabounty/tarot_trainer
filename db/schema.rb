@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_13_002312) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_21_002610) do
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -20,6 +20,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_002312) do
     t.integer "user_id", null: false
     t.index ["tarot_card_id"], name: "index_card_of_the_days_on_tarot_card_id"
     t.index ["user_id"], name: "index_card_of_the_days_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "tarot_card_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["tarot_card_id"], name: "index_favorites_on_tarot_card_id"
+    t.index ["user_id", "tarot_card_id"], name: "index_favorites_on_user_id_and_tarot_card_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "quiz_options", force: :cascade do |t|
@@ -134,6 +144,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_002312) do
 
   add_foreign_key "card_of_the_days", "tarot_cards"
   add_foreign_key "card_of_the_days", "users"
+  add_foreign_key "favorites", "tarot_cards"
+  add_foreign_key "favorites", "users"
   add_foreign_key "quiz_options", "quiz_questions"
   add_foreign_key "quiz_options", "tarot_cards"
   add_foreign_key "quiz_questions", "quizzes"

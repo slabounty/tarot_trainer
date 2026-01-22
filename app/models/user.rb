@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :readings, dependent: :destroy
   has_many :quizzes, dependent: :destroy
 
+  has_many :favorites
+  has_many :favorite_cards, through: :favorites, source: :tarot_card
+
   has_secure_password
   validates :email, presence: true, uniqueness: true
 

@@ -3,6 +3,9 @@ class TarotCard < ApplicationRecord
   has_many :users, through: :card_of_the_days
   belongs_to :suit
 
+  has_many :favorites
+  has_many :favorited_by_users, through: :favorites, source: :user
+
   # app/models/tarot_card.rb
   scope :major_arcana, -> { where(arcana: "Major") }
   scope :minor_arcana, -> { where(arcana: "Minor") }
