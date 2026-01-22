@@ -7,7 +7,6 @@ class FavoritesController < ApplicationController
     )
 
     redirect_to tarot_all_cards_path(anchor: params[:anchor])
-
   end
 
   def destroy
