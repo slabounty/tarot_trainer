@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   resource :learning, only: [ :new, :show ]
 
-  resources :favorites, only: [ :create, :destroy ]
+  resources :favorites, only: [ :index, :create, :destroy ]
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

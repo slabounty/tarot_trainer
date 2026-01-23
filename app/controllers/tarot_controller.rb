@@ -48,8 +48,8 @@ class TarotController < ApplicationController
   def all_cards
     current_user.update_tarot_streak!
 
-  @favorite_card_ids =
-    current_user.favorites.pluck(:tarot_card_id)
+    @favorite_card_ids =
+      current_user.favorites.pluck(:tarot_card_id)
 
     suit_order = [
       "Major Arcana",

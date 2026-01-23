@@ -49,6 +49,10 @@
                       new_learning_path,
                       class: "text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
 
+          <%= link_to "Favorites",
+                      favorites_path,
+                      class: "text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5" %>
+
           <%= link_to "Logout",
                       logout_path,
                       data: { turbo_method: :delete },
