@@ -35,32 +35,26 @@
                   <% if favorite %>
                     <%= button_to favorite_path(favorite),
                           method: :delete,
-                          form_class: "inline",
                           params: {
                             anchor: "card-#{card.id}"
                           },
+                          form_class: "inline",
                           data: { action: "click->card-modal#stop", turbo: false },
                           class: "text-yellow-500 hover:scale-110 transition" do %>
-
                       ⭐
-
                     <% end %>
 
                   <% else %>
-                    <%= button_to favorites_path,
+                    <%= button_to "☆",
+                          favorites_path,
                           method: :post,
-                          form_class: "inline",
                           params: {
                             tarot_card_id: card.id,
                             anchor: "card-#{card.id}"
                           },
+                          form_class: "inline",
                           data: { action: "click->card-modal#stop", turbo: false },
-                          class: "text-gray-400 hover:text-yellow-400 hover:scale-110 transition" do %>
-
-                      ☆
-
-                    <% end %>
-
+                          class: "text-gray-400 hover:text-yellow-400 hover:scale-110 transition" %>
 
                   <% end %>
                 </div>

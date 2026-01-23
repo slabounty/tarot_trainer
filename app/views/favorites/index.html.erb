@@ -1,0 +1,92 @@
+<div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center">
+  <div data-controller="card-modal" class="w-full">
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+      Your Favorite Cards
+    </h1>
+
+    <% if @favorites.any? %>
+      <div class="max-w-5xl mx-auto px-2">
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <% @favorites.each do |favorite| %>
+            <% card = favorite.tarot_card %>
+
+            <div
+              id="card-<%= card.id %>"
+              class="cursor-pointer text-center hover:scale-105 transition"
+              data-action="click->card-modal#open"
+              data-name="<%= card.name %>"
+              data-suit="<%= card.suit.name %>"
+              data-value="<%= card.value %>"
+              data-meaning="<%= card.meaning %>"
+              data-reversed-meaning="<%= card.reversed_meaning %>"
+            >
+              <%= image_tag "tarot/#{card.image_file}",
+                    class: "w-24 sm:w-28 md:w-32 mx-auto rounded shadow" %>
+
+              <div class="mt-2 flex items-center justify-center gap-1">
+                <p class="text-sm text-gray-700">
+                  <%= card.name %>
+                </p>
+
+                <!-- Unfavorite -->
+                <%= button_to "⭐",
+                      favorite_path(favorite),
+                      method: :delete,
+                      params: {
+                        return_to: request.fullpath
+                      },
+                      form_class: "inline",
+                      data: { action: "click->card-modal#stop" },
+                      class: "text-yellow-500 hover:scale-110 transition" %>
+
+
+
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    <% else %>
+      <!-- Empty state -->
+      <div class="text-center text-gray-500 mt-10">
+        <p class="text-lg mb-4">
+          You haven’t favorited any cards yet.
+        </p>
+
+        <%= link_to "Browse All Cards",
+              tarot_all_cards_path,
+              class: "inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700" %>
+      </div>
+    <% end %>
+
+    <!-- MODAL -->
+    <div
+      data-card-modal-target="modal"
+      class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-xl p-6 max-w-md w-full shadow-xl relative">
+        <button
+          class="absolute top-3 right-3 text-gray-500 hover:text-black"
+          data-action="click->card-modal#close"
+        >
+          ✕
+        </button>
+
+        <h3
+          data-card-modal-target="title"
+          class="text-2xl font-bold mb-4"
+        ></h3>
+
+        <div
+          data-card-modal-target="content"
+          class="space-y-2"
+        ></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
