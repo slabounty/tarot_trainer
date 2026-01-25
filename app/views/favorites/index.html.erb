@@ -20,6 +20,8 @@
               data-suit="<%= card.suit.name %>"
               data-value="<%= card.value %>"
               data-meaning="<%= card.meaning %>"
+              data-arcana="<%= card.arcana %>"
+              data-element="<%= card.element %>"
               data-reversed-meaning="<%= card.reversed_meaning %>"
             >
               <%= image_tag "tarot/#{card.image_file}",
@@ -40,9 +42,6 @@
                       form_class: "inline",
                       data: { action: "click->card-modal#stop" },
                       class: "text-yellow-500 hover:scale-110 transition" %>
-
-
-
               </div>
             </div>
           <% end %>

@@ -13,8 +13,9 @@ export default class extends Controller {
     this.contentTarget.innerHTML = `
       <p><strong>Meaning:</strong> ${el.dataset.meaning}</p>
       <p><strong>Reversed:</strong> ${el.dataset.reversedMeaning}</p>
+      <p><strong>Arcana:</strong> ${el.dataset.arcana}</p>
+      <p><strong>Element:</strong> ${el.dataset.element}</p>
     `
-
     this.modalTarget.classList.remove("hidden")
   }
 
