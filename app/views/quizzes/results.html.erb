@@ -15,20 +15,32 @@
         Card: <%= question.quiz_options.find(&:correct?).tarot_card.name %>
       </p>
 
-      <p>
-        Your answer:
-        <span class="<%= result[:correct] ? 'text-green-600' : 'text-red-600' %>">
-          <%= result[:selected_option].tarot_card.meaning %>
-        </span>
-      </p>
+      <% card = question.quiz_options.find(&:correct?).tarot_card %>
 
-      <% unless result[:correct] %>
-        <p class="mt-2 text-green-700">
-          Correct answer:
-          <%= result[:correct_option].tarot_card.meaning %>
-        </p>
-      <% end %>
+      <div class="flex gap-4 items-start mb-3">
+        <%= image_tag "tarot/#{card.image_file}",
+              class: "w-24 rounded shadow",
+              alt: card.name %>
+
+        <div class="flex-1">
+          <p>
+            Your answer:
+            <span class="<%= result[:correct] ? 'text-green-600' : 'text-red-600' %>">
+              <%= result[:selected_option].tarot_card.meaning %>
+            </span>
+          </p>
+
+          <% unless result[:correct] %>
+            <p class="mt-2 text-green-700">
+              Correct answer:
+              <%= result[:correct_option].tarot_card.meaning %>
+            </p>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+
   <% end %>
 
   <%= link_to "Take another quiz", new_quiz_path, class: "btn-secondary" %>
