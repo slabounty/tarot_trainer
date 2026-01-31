@@ -11,7 +11,6 @@ RSpec.describe "Dashboard", type: :request do
   describe "GET /dashboard" do
     it "renders the quick action links" do
       get dashboard_path
-      puts "body = #{response.body}"
 
       expect(response).to have_http_status(:ok)
 
