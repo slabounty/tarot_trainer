@@ -56,6 +56,7 @@ group :development, :test do
   gem "rspec-rails", "~> 8.0.2" # Use the latest stable version
 
   gem "pry-rails"
+  gem "pry-byebug"
 end
 
 group :development do

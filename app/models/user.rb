@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :readings, dependent: :destroy
   has_many :quizzes, dependent: :destroy
 
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
+
   has_many :favorites
   has_many :favorite_cards, through: :favorites, source: :tarot_card
 
@@ -16,16 +19,28 @@ class User < ApplicationRecord
       today = Date.current
 
       if streak_last_date == today
-        # Already counted today — do nothing
         return streak_count
       elsif streak_last_date == today - 1.day
-        # Continue streak
-        update!(streak_count: streak_count + 1, streak_last_date: today)
+        update!(
+          streak_count: streak_count + 1,
+          streak_last_date: today
+        )
+        BadgeEvaluator.evaluate_streak(self)
       else
-        # Reset streak
-        update!(streak_count: 1, streak_last_date: today)
+        update!(
+          streak_count: 1,
+          streak_last_date: today
+        )
       end
 
       streak_count
+    end
+
+    def award_badge!(key)
+      badge = Badge.find_by!(key: key)
+
+      user_badges.find_or_create_by!(badge: badge) do |ub|
+        ub.earned_at = Time.current
+      end
     end
 end

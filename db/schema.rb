@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_21_002610) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_01_000024) do
+  create_table "badges", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "key"
+    t.string "name"
+    t.integer "sort_order"
+    t.integer "threshold"
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_badges_on_key", unique: true
+  end
+
   create_table "card_of_the_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date_shown"
@@ -131,6 +142,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_21_002610) do
     t.index ["suit_id"], name: "index_tarot_cards_on_suit_id"
   end
 
+  create_table "user_badges", force: :cascade do |t|
+    t.integer "badge_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "earned_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id", "badge_id"], name: "index_user_badges_on_user_id_and_badge_id", unique: true
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email"
@@ -159,4 +181,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_21_002610) do
   add_foreign_key "spread_positions", "spreads"
   add_foreign_key "spread_prompts", "spreads"
   add_foreign_key "tarot_cards", "suits"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

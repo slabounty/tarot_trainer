@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user.update_tarot_streak!
 
     @streak = current_user.streak_count
+    @badges = @user.badges.order(:sort_order)
 
     today = Date.current
     @card_of_the_day = current_user.card_of_the_days.find_or_create_by(date_shown: today) do |entry|
