@@ -7,4 +7,3 @@ FactoryBot.define do
     threshold { 3 }
   end
 end
-
