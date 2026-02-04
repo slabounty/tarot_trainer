@@ -1416,3 +1416,6 @@ reversed_tarot_cards.each do |reversed_tarot_card|
     tarot_card.save
   end
 end
+
+# Badges
+load Rails.root.join("db/seeds/badges.rb")

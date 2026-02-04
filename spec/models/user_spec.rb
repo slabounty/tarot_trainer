@@ -32,4 +32,23 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#award_badge!" do
+    let!(:badge) { create(:badge, key: "three_day_key", threshold: 3) }
+
+    context "when the user doesn't have the badge" do
+      it "awards the badge" do
+        user.award_badge!(badge.key)
+        expect(user.badges.count).to eq(1)
+      end
+    end
+
+    context "when the user has the badge" do
+      it "does not award the badge" do
+        user.award_badge!(badge.key)
+        user.award_badge!(badge.key)
+        expect(user.badges.count).to eq(1)
+      end
+    end
+  end
 end
