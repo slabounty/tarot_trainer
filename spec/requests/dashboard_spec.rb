@@ -37,7 +37,7 @@ RSpec.describe "Dashboard", type: :request do
 
       expect(response).to have_http_status(:ok)
 
-      #expect(response.body).to include("Welcome back, Bobby")
+      expect(response.body).to include("Welcome back, Bobby")
 
       expect(response.body).to include("Your Badges")
       expect(response.body).to include("The Streak Badge")
