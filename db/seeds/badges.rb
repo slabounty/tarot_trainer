@@ -74,3 +74,20 @@ QUIZ_BADGES.each do |attrs|
   quiz_badge.assign_attributes(attrs)
   quiz_badge.save!
 end
+
+QUIZ_PERCENT_BADGES = [
+  {
+    key: "quiz_100_percent",
+    name: "Quiz Master",
+    description: "100% Quiz Result",
+    category: "quiz_percentage",
+    threshold: 100,
+    sort_order: 200
+  }
+].freeze
+
+QUIZ_PERCENT_BADGES.each do |attrs|
+  quiz_badge = Badge.find_or_initialize_by(key: attrs[:key])
+  quiz_badge.assign_attributes(attrs)
+  quiz_badge.save!
+end

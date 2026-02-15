@@ -77,4 +77,42 @@ RSpec.describe BadgeEvaluator do
       end
     end
   end
+
+  describe ".evaluate_quiz_percentages" do
+    let(:user) { create(:user) }
+    let!(:q1) { create(:quiz, user: user) }
+
+    let!(:three_day_badge) do
+      create(
+        :badge,
+        key: "100 percent quiz",
+        category: "quiz_percentage",
+        threshold: 100
+      )
+    end
+
+    context "when the user does not score high enough" do
+      it "does not award the badge" do
+        expect {
+          described_class.evaluate_quiz_percentages(user, 80)
+        }.to change {
+          user.user_badges.count
+        }.by(0)
+      end
+    end
+
+    context "when the user has scores 100" do
+      let!(:q3) { create(:quiz, user: user) }
+
+      it "awards the 100 percent quiz badge" do
+        expect {
+          described_class.evaluate_quiz_percentages(user, 100)
+        }.to change {
+          user.user_badges.count
+        }.by(1)
+
+        expect(user.badges.pluck(:key)).to include("100 percent quiz")
+      end
+    end
+  end
 end
