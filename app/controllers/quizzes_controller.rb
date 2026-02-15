@@ -92,6 +92,9 @@ class QuizzesController < ApplicationController
     # Update quiz streak
     BadgeEvaluator.evaluate_quizzes(current_user)
 
+    # Update quiz streak
+    BadgeEvaluator.evaluate_quiz_percentages(current_user, @score_percentage)
+
     render :results
   end
 end

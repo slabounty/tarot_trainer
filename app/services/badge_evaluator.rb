@@ -21,4 +21,14 @@ class BadgeEvaluator
         user.award_badge!(badge.key)
       end
   end
+
+  def self.evaluate_quiz_percentages(user, score)
+    Badge
+      .where(category: "quiz_percentage")
+      .where("threshold <= ?", score)
+      .order(:threshold)
+      .each do |badge|
+        user.award_badge!(badge.key)
+      end
+  end
 end
