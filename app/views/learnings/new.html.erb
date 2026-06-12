@@ -11,7 +11,8 @@
         ["Cups", "cups"],
         ["Wands", "wands"],
         ["Swords", "swords"],
-        ["Pentacles", "pentacles"]
+        ["Pentacles", "pentacles"],
+        ["Face Cards", "face"],
       ].each do |label, value| %>
         <label class="flex items-center space-x-2">
           <%= radio_button_tag :mode, value, value == "all_cards" %>

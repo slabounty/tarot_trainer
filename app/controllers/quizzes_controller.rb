@@ -28,6 +28,8 @@ class QuizzesController < ApplicationController
         TarotCard.includes(:suit).where(suits: { name: "Cups" })
       when "pentacles"
         TarotCard.includes(:suit).where(suits: { name: "Pentacles" })
+      when "face"
+        TarotCard.where(value: %w[Page Knight Queen King])
       end
 
     tarot_cards = tarot_cards.to_a

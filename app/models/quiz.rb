@@ -9,6 +9,7 @@ class Quiz < ApplicationRecord
     cups: 2,
     wands: 3,
     swords: 4,
-    pentacles: 5
+    pentacles: 5,
+    face: 6,
   }
 end
