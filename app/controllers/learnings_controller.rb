@@ -16,6 +16,8 @@ class LearningsController < ApplicationController
         TarotCard.major_arcana
       when "cups", "wands", "swords", "pentacles"
         TarotCard.joins(:suit).where(suits: { name: @mode.capitalize })
+      when "face"
+        TarotCard.where(value: %w[Page Knight Queen King])
       else
         TarotCard.all
       end

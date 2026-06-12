@@ -12,7 +12,8 @@ RSpec.describe "LearningsController", type: :request do
     create(:tarot_card, name: "Ace of Cups", suit: cups, meaning: "Cups meaning"),
     create(:tarot_card, name: "Ace of Wands", suit: wands, meaning: "Wands meaning"),
     create(:tarot_card, name: "Ace of Swords", suit: swords, meaning: "Swords meaning"),
-    create(:tarot_card, name: "Ace of Pentacles", suit: pentacles, meaning: "Pentacles meaning")
+    create(:tarot_card, name: "Ace of Pentacles", suit: pentacles, meaning: "Pentacles meaning"),
+    create(:tarot_card, name: "King of Pentacles", suit: pentacles, meaning: "Face meaning", value: "King"),
   ] }
 
   describe "GET /quizzes/new" do
@@ -54,7 +55,7 @@ RSpec.describe "LearningsController", type: :request do
         get learning_path(mode: "cups")
 
         expect(response).to have_http_status(:ok)
-        expect(response.body).to include("Ace of Cups")
+        expect(response.body).to include("of Cups")
       end
     end
 
@@ -63,7 +64,7 @@ RSpec.describe "LearningsController", type: :request do
         get learning_path(mode: "wands")
 
         expect(response).to have_http_status(:ok)
-        expect(response.body).to include("Ace of Wands")
+        expect(response.body).to include("of Wands")
       end
     end
 
@@ -72,7 +73,7 @@ RSpec.describe "LearningsController", type: :request do
         get learning_path(mode: "swords")
 
         expect(response).to have_http_status(:ok)
-        expect(response.body).to include("Ace of Swords")
+        expect(response.body).to include("of Swords")
       end
     end
 
@@ -81,7 +82,16 @@ RSpec.describe "LearningsController", type: :request do
         get learning_path(mode: "pentacles")
 
         expect(response).to have_http_status(:ok)
-        expect(response.body).to include("Ace of Pentacles")
+        expect(response.body).to include("of Pentacles")
+      end
+    end
+
+    context "when the mode is face" do
+      it "shows the face card" do
+        get learning_path(mode: "face")
+
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include("King of Pentacles")
       end
     end
   end

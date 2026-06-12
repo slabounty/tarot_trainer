@@ -12,7 +12,8 @@ RSpec.describe "QuizController", type: :request do
     create(:tarot_card, name: "Ace of Cups", suit: cups, meaning: "Cups meaning"),
     create(:tarot_card, name: "Ace of Wands", suit: wands, meaning: "Wands meaning"),
     create(:tarot_card, name: "Ace of Swords", suit: swords, meaning: "Swords meaning"),
-    create(:tarot_card, name: "Ace of Pentacles", suit: pentacles, meaning: "Pentacles meaning")
+    create(:tarot_card, name: "Ace of Pentacles", suit: pentacles, meaning: "Pentacles meaning"),
+    create(:tarot_card, name: "King of Pentacles", suit: pentacles, value: "King", meaning: "Pentacles meaning")
   ] }
 
   describe "GET /quizzes/new" do
@@ -131,6 +132,22 @@ RSpec.describe "QuizController", type: :request do
         end.uniq
 
       tarot_cards.each do |card|
+        expect(card.suit.name).to eq("Pentacles")
+      end
+    end
+
+    it "handles face cards" do
+      post quizzes_path, params: { quiz_type: "face" }
+
+      quiz = Quiz.last
+
+      tarot_cards =
+        quiz.quiz_questions.flat_map do |q|
+          q.quiz_options.map(&:tarot_card)
+        end.uniq
+
+      tarot_cards.each do |card|
+        expect(card.value).to eq("King")
         expect(card.suit.name).to eq("Pentacles")
       end
     end
